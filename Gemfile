@@ -5,6 +5,9 @@ ruby '3.0.3'
 
 # custom
 gem 'rspec-rails'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'devise'
+gem 'factory_bot'
 # custom
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
