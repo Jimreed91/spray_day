@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe Farm, type: :model do
   pending
 end

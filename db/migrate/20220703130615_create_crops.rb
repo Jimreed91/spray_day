@@ -5,6 +5,7 @@ class CreateCrops < ActiveRecord::Migration[6.1]
       t.integer :year
       t.decimal :hectares
       t.decimal :row_spacing
+      t.references :farm, null: false, foreign_key: true
 
       t.timestamps
     end
