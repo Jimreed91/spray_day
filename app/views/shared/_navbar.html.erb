@@ -25,11 +25,20 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
       </div>
+    <p class="navbar-text float-right"> Logged in as <strong><%= user_signed_in? ? current_user.email : "nobody" %></strong>. </p>
+
       <div class="nav-item dropdown align-">
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <%= link_to "Sign out", destroy_user_session_path, class:'dropdown-item', method: :delete %>
-          <a class="dropdown-item" href="#">Another action</a>
+          <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, class:'dropdown-item', method: :delete %>
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %> |
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'dropdown-item'  %> |
+            <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
+          <% end %>
         </div>
       </div>
   </div>
+</nav>
+<p class="navbar-text float-right">
