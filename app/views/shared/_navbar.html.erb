@@ -32,9 +32,9 @@
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, class:'dropdown-item', method: :delete %>
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %> |
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %>
           <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'dropdown-item'  %> |
+            <%= link_to "Sign up", new_user_registration_path, :class => 'dropdown-item'  %>
             <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
           <% end %>
         </div>
