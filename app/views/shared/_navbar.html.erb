@@ -10,7 +10,9 @@
           <%= link_to "Home", "/", class: "nav-link active" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Farm", farm_path(current_user.farm), class: "nav-link active" %>
+          <% if current_user %>
+            <%= link_to "Farm", farm_path(current_user.farm), class: "nav-link active" %>
+          <% end %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
