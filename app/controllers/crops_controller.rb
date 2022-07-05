@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CropsController < ApplicationController
   def index
     @crops = Crop.where(farm: current_user)

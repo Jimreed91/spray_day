@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :crop do
     name { "#{Faker::Verb.ing_form} apple" }
