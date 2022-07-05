@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FarmsController < ApplicationController
   def new
     @farm = Farm.new
