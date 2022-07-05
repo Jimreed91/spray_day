@@ -1,6 +1,6 @@
 class CropsController < ApplicationController
   def index
-    @crops = Crop.all
+    @crops = Crop.where(farm: current_user.farm)
   end
 
   def show
