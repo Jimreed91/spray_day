@@ -9,12 +9,14 @@ class CropsController < ApplicationController
 
   def new
     @crop = Crop.new
+    @farms = Farm.where(user: current_user)
   end
 
   def create
     @crop = Crop.new(crop_params)
+
     if @crop.save
-      redirect_to crops_path(@crop)
+      redirect_to crop_path(@crop)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,6 +30,6 @@ class CropsController < ApplicationController
 
   private
   def crop_params
-    params.require(:crop).permit(:name, :year, :hectares, :row_spacing, :farm)
+    params.require(:crop).permit(:name, :year, :hectares, :row_spacing, :farm_id)
   end
 end
