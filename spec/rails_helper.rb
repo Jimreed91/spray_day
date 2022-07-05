@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
-unless Webpacker.compiler.fresh?
-  puts '== Webpack compiling =='
-  Webpacker.compiler.compile
-  puts '== Webpack compiled =='
-end
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -14,8 +10,13 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'support/factory_bot'
 require 'capybara/rails'
+require 'webpacker'
 # Add additional requires below this line. Rails is not loaded until this point!
-
+unless Webpacker.compiler.fresh?
+  puts '== Webpack compiling =='
+  Webpacker.compiler.compile
+  puts '== Webpack compiled =='
+end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
