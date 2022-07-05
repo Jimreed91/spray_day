@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Obligatory comment
 class CropsController < ApplicationController
   def index
     @crops = Crop.where(farm: current_user)
@@ -22,13 +25,12 @@ class CropsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def destroy
-  end
+  def destroy; end
 
   private
+
   def crop_params
     params.require(:crop).permit(:name, :year, :hectares, :row_spacing, :farm_id)
   end

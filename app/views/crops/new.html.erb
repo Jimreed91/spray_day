@@ -11,7 +11,7 @@
   <%= form.label("Row spacing(m)") %>
   <%= form.text_field(:row_spacing) %>
   <%= form.label("Farm") %>
-  <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %> %>
+  <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
   <%= form.select :farm_id,
     options_from_collection_for_select(@farms, 'id', 'name') %>
   <%= form.submit %>

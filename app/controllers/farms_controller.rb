@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Top level doc
 class FarmsController < ApplicationController
   def new
     @farm = Farm.new
