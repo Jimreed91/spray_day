@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+unless Webpacker.compiler.fresh?
+  puts '== Webpack compiling =='
+  Webpacker.compiler.compile
+  puts '== Webpack compiled =='
+end
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
