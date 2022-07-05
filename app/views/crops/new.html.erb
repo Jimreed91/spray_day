@@ -1,2 +1,15 @@
 <h1>Crops#new</h1>
 <p>Find me in app/views/crops/new.html.erb</p>
+
+<%= form_with model: @crop do |form| %>
+  <%= form.label("Crop name") %>
+  <%= form.text_field(:name) %>
+  <%= form.label("Year planted") %>
+  <%= form.text_field(:year) %>
+  <%= form.label("Hectares") %>
+  <%= form.text_field(:hectares) %>
+  <%= form.label("Row spacing(m)") %>
+  <%= form.text_field(:row_spacing) %>
+  <%= form.submit %>
+ <% raise %>
+<% end %>
