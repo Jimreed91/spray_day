@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # get '/pages', to: 'pages/#main'
@@ -10,11 +9,8 @@ Rails.application.routes.draw do
   post '/crops', to: 'crops#create'
   get '/crops', to: 'crops#index'
 
-
   get 'farms/new', to: 'farms#new'
   get 'farms/:id', to: 'farms#show', as: :farm
   post 'farms', to: 'farms#create'
   get 'farms/', to: 'farms#index'
-
-
 end
