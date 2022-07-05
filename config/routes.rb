@@ -6,14 +6,15 @@ Rails.application.routes.draw do
   root to: 'pages#main'
 
   get 'crops/new', to: 'crops#new'
-  get 'crops/:id', to: 'crops#show'
+  get 'crops/:id', to: 'crops#show', as: :crop
   post '/crops', to: 'crops#create'
+  get '/crops', to: 'crops#index'
 
 
   get 'farms/new', to: 'farms#new'
   get 'farms/:id', to: 'farms#show', as: :farm
   post 'farms', to: 'farms#create'
-  get 'farms/index', to: 'farms#index'
+  get 'farms/', to: 'farms#index'
 
 
 end
