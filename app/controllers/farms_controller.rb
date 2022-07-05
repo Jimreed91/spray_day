@@ -9,7 +9,6 @@ class FarmsController < ApplicationController
     if @farm.save
       redirect_to @farm
     else
-      raise
       render :new
     end
   end

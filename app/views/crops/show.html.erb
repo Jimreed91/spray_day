@@ -1,2 +1,11 @@
-<h1>Crops#show</h1>
-<p>Find me in app/views/crops/show.html.erb</p>
+<h1><strong><%= @crop.name %></strong><%= @crop.year  %></h1>
+<ul>
+  <li>Farm: <%= @crop.farm.name %></li>
+  <li>Hectares: <%= @crop.hectares %></li>
+  <li>Row spacing: <%= @crop.row_spacing %></li>
+
+</ul>
+
+<ul class="list-inline">
+  <li><%= link_to "Index", crops_url, class: "btn btn-primary"%></li>
+ </ul>
