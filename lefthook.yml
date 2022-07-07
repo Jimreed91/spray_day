@@ -7,7 +7,7 @@ pre-push:
   commands:
     packages-audit:
       tags: frontend security
-      run: yarn audit
+      # run: yarn audit
     gems-audit:
       tags: backend security
       run: bundle audit
