@@ -32,14 +32,18 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'factory_bot_rails'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'bundler-audit', require: false
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'capybara'
-
+  gem 'capybara', '>= 3.26'
+  gem 'factory_bot_rails'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'rails-erd'
   gem 'rspec-rails'
+  gem 'rubocop'
+  gem 'ruby_audit', require: false
 end
 
 group :development do
@@ -54,8 +58,10 @@ group :development do
 end
 
 group :test do
+  gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'simplecov', require: false
   gem 'simplecov-rcov', require: false
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
