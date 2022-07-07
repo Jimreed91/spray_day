@@ -1,0 +1,42 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+#
+pre-push:
+  commands:
+    packages-audit:
+      tags: frontend security
+      run: yarn audit
+    gems-audit:
+      tags: backend security
+      run: bundle audit
+    rubocop:
+      tags: backend style
+      glob: "*.rb"
+      exclude: "application.rb|routes.rb"
+      run: bundle exec rubocop --force-exclusion {}
+    stylelint:
+      tags: frontend style
+      run: stylelint "**/*.{css,scss,sass}"
+    standardlint:
+      tags: js linting
+      run: standard
+
+# pre-commit:
+#   parallel: true
+#   commands:
+#     eslint:
+#       glob: "*.{js,ts,jsx,tsx}"
+#       run: yarn eslint {staged_files}
+#
+#     govet:
+#       tags: backend style
+#       files: git ls-files -m
+#       glob: "*.go"
+#       run: go vet {files}
+#   scripts:
+#     "hello.js":
+#       runner: node
+#     "any.go":
+#       runner: go run
