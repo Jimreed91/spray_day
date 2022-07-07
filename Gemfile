@@ -46,6 +46,8 @@ group :development, :test do
   gem 'rubocop'
   gem 'rails-erd'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'bundler-audit', require: false
+  gem 'ruby_audit', require: false
 end
 
 group :development do
