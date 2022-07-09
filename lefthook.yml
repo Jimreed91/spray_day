@@ -8,7 +8,7 @@
   commands:
     packages-audit:
       tags: frontend security
-      run: yarn audit
+      run: yarn audit {staged_files}
     gems-audit:
       tags: backend security
       run: bundle audit
@@ -23,6 +23,9 @@
     standardlint:
       tags: js linting
       run: standard
+    yarn-eslint:
+      glob: "*.{js,ts,jsx,tsx}" # glob filter for list of files
+      run: yarn eslint {staged_files} # {staged_files} - list of files
 
 # pre-commit:
 #   parallel: true
