@@ -5,7 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 gem 'devise'
-gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # custom
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
@@ -61,10 +60,13 @@ group :development do
 end
 
 group :test do
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'simplecov', require: false
   gem 'simplecov-rcov', require: false
   gem 'webdrivers'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
