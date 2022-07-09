@@ -20,7 +20,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 // The stylesheet location we created earlier
-require('../stylesheets/application.scss')
+// require('../stylesheets/application.scss')
 
 // If you're using Turbolinks. Otherwise simply use: jQuery(function () {
 // document.addEventListener('turbolinks:load', () => {
