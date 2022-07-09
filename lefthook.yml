@@ -3,12 +3,12 @@
 #   Refer for explanation to following link:
 #   https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
 #
-pre-push:
+ pre-push:
   parallel: true
   commands:
     packages-audit:
       tags: frontend security
-      # run: yarn audit
+      run: yarn audit
     gems-audit:
       tags: backend security
       run: bundle audit
@@ -16,10 +16,10 @@ pre-push:
       tags: backend style
       glob: "*.rb"
       exclude: "application.rb|routes.rb"
-      run: bundle exec rubocop --force-exclusion {}
+      run: bundle exec rubocop
     stylelint:
       tags: frontend style
-      run: stylelint "**/*.{css,scss,sass}"
+      run: stylelint "**/*.{scss,sass}"
     standardlint:
       tags: js linting
       run: standard
