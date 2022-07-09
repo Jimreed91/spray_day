@@ -44,6 +44,8 @@ group :development, :test do
   gem 'rails-erd'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'ruby_audit', require: false
 end
 
