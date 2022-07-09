@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :farm
+  has_one :farm, dependent: :destroy
   has_many :crops, through: :farm
   after_create :create_farm
 

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Login', type: :feature do
+RSpec.describe 'Login', type: :feature do
   it 'can sign up with valid email and password' do
     visit 'users/sign_up'
 
