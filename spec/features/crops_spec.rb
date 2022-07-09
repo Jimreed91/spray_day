@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature 'crops', type: :feature do
-  scenario 'can add a new crop with valid inputs' do
-    login_as(FactoryBot.create(:user))
-
+RSpec.describe 'crops', type: :feature do
+  it 'can add a new crop with valid inputs' do
+    login_as(:user)
     visit crops_new_path
     fill_in('crop_name', with: 'test apple')
     fill_in('crop_year', with: 2010)
@@ -12,6 +13,5 @@ RSpec.feature 'crops', type: :feature do
     select('Your Farm', from: 'crop_farm_id')
     click_on('commit')
     expect(page).to have_content('test apple')
-
   end
 end
