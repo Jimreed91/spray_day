@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'crops', type: :feature do
   it 'can add a new crop with valid inputs' do
-    login_as(:user)
+    login_as(create(:user))
     visit crops_new_path
     fill_in('crop_name', with: 'test apple')
     fill_in('crop_year', with: 2010)
