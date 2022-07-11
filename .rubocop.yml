@@ -11,8 +11,16 @@
 require:
   - rubocop-rails
   - rubocop-rspec
+
+AllCops:
+  # DisplayCopNames: true
+  Exclude:
+    - '/config/initializers/simple_form_bootstrap.rb'
+
 Layout/LineLength:
   Enabled: false
+
+
 
 Style/Documentation:
   Enabled: false
@@ -28,8 +36,6 @@ Metrics/BlockLength:
     - namespace
     - draw
     - configure
-AllCops:
-  DisplayCopNames: true
 
 # Needs to be more specific
 RSpec/ExampleLength:
