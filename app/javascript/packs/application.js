@@ -6,10 +6,11 @@ import Rails from '@rails/ujs'
 import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
-// Bootstrap linked from js folder /..
- import '../js/bootstrap_js_files.js'
 
 import 'bootstrap'
+// Bootstrap linked from js folder /..
+// import '../js/bootstrap_js_files.js'
+
 
 // Import the specific modules you may need (Modal, Alert, etc)
 // import { Tooltip, Popover } from 'bootstrap'
@@ -19,8 +20,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// The stylesheet location we created earlier
- require('../stylesheets/application.scss')
+// // The stylesheet location we created earlier
+// require('../stylesheets/application.scss')
 
 // If you're using Turbolinks. Otherwise simply use: jQuery(function () {
 // document.addEventListener('turbolinks:load', () => {
