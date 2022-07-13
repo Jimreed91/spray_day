@@ -42,7 +42,9 @@ class CropsController < ApplicationController
   end
 
   def destroy
-
+    @crop = Crop.find(params[:id])
+    @crop.delete
+    redirect_to crops_path
   end
 
   private
