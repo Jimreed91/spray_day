@@ -25,9 +25,25 @@ class CropsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @crop = Crop.find(params[:id])
+    @farms = Farm.where(user: current_user)
+  end
 
-  def destroy; end
+  def update
+    @crop = Crop.find(params[:id])
+    @crop.update(crop_params)
+
+    if @crop.save
+      redirect_to crop_path(@crop)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+
+  end
 
   private
 

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'crops/:id', to: 'crops#show', as: :crop
   post '/crops', to: 'crops#create'
   get '/crops', to: 'crops#index'
+  get 'crops/:id/edit', to: 'crops#edit', as: :edit_crop
+  patch 'crops/:id', to: 'crops#update'
 
   get 'farms/new', to: 'farms#new'
   get 'farms/:id', to: 'farms#show', as: :farm
