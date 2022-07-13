@@ -33,20 +33,20 @@
       tags: frontend security
       run: yarn audit {staged_files}
 
-# pre-commit:
-#   parallel: true
-#   commands:
-#     eslint:
-#       glob: "*.{js,ts,jsx,tsx}"
-#       run: yarn eslint {staged_files}
-#
-#     govet:
-#       tags: backend style
-#       files: git ls-files -m
-#       glob: "*.go"
-#       run: go vet {files}
-#   scripts:
-#     "hello.js":
-#       runner: node
-#     "any.go":
-#       runner: go run
+# # pre-commit:
+# #   parallel: true
+# #   commands:
+# #     eslint:
+# #       glob: "*.{js,ts,jsx,tsx}"
+# #       run: yarn eslint {staged_files}
+# #
+# #     govet:
+# #       tags: backend style
+# #       files: git ls-files -m
+# #       glob: "*.go"
+# #       run: go vet {files}
+# #   scripts:
+# #     "hello.js":
+# #       runner: node
+# #     "any.go":
+# #       runner: go run
