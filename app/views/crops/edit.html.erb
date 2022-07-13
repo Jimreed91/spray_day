@@ -1,2 +1,18 @@
 <h1>Crops#edit</h1>
 <p>Find me in app/views/crops/edit.html.erb</p>
+
+<%= form_for  @crop do |form| %>
+  <%= form.label("Crop name") %>
+  <%= form.text_field(:name) %>
+  <%= form.label("Year planted") %>
+  <%= form.text_field(:year) %>
+  <%= form.label("Hectares") %>
+  <%= form.text_field(:hectares) %>
+  <%= form.label("Row spacing(m)") %>
+  <%= form.text_field(:row_spacing) %>
+  <%= form.label("Farm") %>
+  <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
+  <%= form.select :farm_id,
+    options_from_collection_for_select(@farms, 'id', 'name') %>
+  <%= form.submit %>
+<% end %>
