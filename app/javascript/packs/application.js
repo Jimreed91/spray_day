@@ -6,7 +6,7 @@ import Rails from '@rails/ujs'
 import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
-// import "../../assets/stylesheets/application.scss"
+//
 // import 'bootstrap'
 // Bootstrap linked from js folder /..
 // import '../js/bootstrap_js_files.js'
@@ -14,6 +14,9 @@ import 'channels'
 // Import the specific modules you may need (Modal, Alert, etc)
 // import { Tooltip, Popover } from 'bootstrap'
 require('@popperjs/core')
+import 'bootstrap/dist/js/bootstrap'
+import "bootstrap/dist/css/bootstrap";
+import "../../assets/stylesheets/application.scss"
 // require('bootstrap')
 Rails.start()
 Turbolinks.start()
