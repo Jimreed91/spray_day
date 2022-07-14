@@ -17,15 +17,18 @@
       glob: "*.rb"
       exclude: "application.rb|routes.rb"
       run: bundle exec rubocop
+    rubocop auto:
+      tags: backend style
+      run: bundle exec rubocop -a
     stylelint:
       tags: frontend style
       run: stylelint "**/*.{scss,sass}" {staged_files}
     standardlint:
       tags: js linting
-      run: standard
+      run: standard {staged_files}
     yarn-eslint:
       glob: "*.{js,ts,jsx,tsx}" # glob filter for list of files
-      run: yarn eslint  # {staged_files} - list of files
+      run: yarn eslint   {staged_files} - list of files
     rspec-test:
       run: rspec
   post-merge:
