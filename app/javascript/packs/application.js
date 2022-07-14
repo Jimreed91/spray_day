@@ -9,7 +9,7 @@ import 'channels'
 import "../../assets/stylesheets/application.scss"
 // import 'bootstrap'
 // Bootstrap linked from js folder /..
-// import '../js/bootstrap_js_files.js'
+import '../js/bootstrap_js_files.js'
 
 // Import the specific modules you may need (Modal, Alert, etc)
 // import { Tooltip, Popover } from 'bootstrap'
