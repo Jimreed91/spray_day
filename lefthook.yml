@@ -11,21 +11,21 @@
       run: yarn audit {staged_files}
     gems-audit:
       tags: backend security
-      run: bundle audit {staged_files}
+      run: bundle audit
     rubocop:
       tags: backend style
       glob: "*.rb"
       exclude: "application.rb|routes.rb"
-      run: bundle exec rubocop {staged_files}
+      run: bundle exec rubocop
     stylelint:
       tags: frontend style
       run: stylelint "**/*.{scss,sass}" {staged_files}
     standardlint:
       tags: js linting
-      run: standard {staged_files}
+      run: standard
     yarn-eslint:
       glob: "*.{js,ts,jsx,tsx}" # glob filter for list of files
-      run: yarn eslint {staged_files} # {staged_files} - list of files
+      run: yarn eslint  # {staged_files} - list of files
     rspec-test:
       run: rspec
   post-merge:
