@@ -44,7 +44,7 @@ RSpec/ExampleLength:
 Rails/NotNullColumn:
   Enabled: false
 Style/FrozenStringLiteralComment:
-  Enabled: true
+  Enabled: false
 
 
 Rails/FilePath:
