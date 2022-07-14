@@ -14,7 +14,7 @@ import "../../assets/stylesheets/application.scss"
 // Import the specific modules you may need (Modal, Alert, etc)
 // import { Tooltip, Popover } from 'bootstrap'
 require('@popperjs/core')
-require('bootstrap')
+// require('bootstrap')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
