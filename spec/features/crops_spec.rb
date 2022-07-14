@@ -37,5 +37,4 @@ RSpec.describe 'crops', type: :feature do
     click_on('Delete')
     expect(page).not_to have_content('cartoon foxes')
   end
-
 end
