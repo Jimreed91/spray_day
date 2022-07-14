@@ -4,8 +4,8 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-
-@import "_bootstrap";
+@import "bootstrap/scss/bootstrap.scss";
+// @import "../node_modules/bootstrap/scss/_bootstrap";
 // @import "~font-awesome";
 
 // Your CSS partials
