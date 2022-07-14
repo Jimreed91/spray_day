@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe 'crops', type: :feature do
-
   it 'user can create and view a new crop' do
     login_as(create(:user))
     visit crops_new_path
@@ -21,14 +20,22 @@ RSpec.describe 'crops', type: :feature do
     create(:crop, name: 'cartoon foxes', farm: user.farm)
     login_as(user)
     visit crops_path
-    puts page
-    expect(page).to have_content('cartoon foxes')
     click_button('Options')
     click_on('Edit')
     fill_in('crop_name', with: 'chunky bacon')
     click_on('commit')
     click_on('Index')
-    save_and_open_page
     expect(page).to have_content('chunky bacon')
   end
+
+  it 'user can delete a crop from index' do
+    user = create(:user)
+    create(:crop, name: 'cartoon foxes', farm: user.farm)
+    login_as(user)
+    visit crops_path
+    click_button('Options')
+    click_on('Delete')
+    expect(page).not_to have_content('cartoon foxes')
+  end
+
 end
