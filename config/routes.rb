@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
 
-  post 'products', to: 'productss#create'
+  post 'products', to: 'products#create'
   get 'products/new', to: 'products#new'
   get 'products/:id', to: 'products#show', as: :product
   get 'products/', to: 'products#index'
