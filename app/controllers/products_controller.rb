@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def new
     @product = Product.new
+    @farms = Farm.where(user: current_user)
   end
 
   def create
@@ -9,6 +10,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to @product
     else
+      flash.now[:alert] = @product.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -18,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.where(farm: current_user)
   end
 
   def edit
@@ -35,7 +37,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_params(params)
-    params.require(:product).permit(:name, :rate_per_ha, :liquid)
+  def product_params
+    params.require(:product).permit(:name, :rate_per_ha, :liquid, :farm_id)
   end
 end

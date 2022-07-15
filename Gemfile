@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '>= 3.26'
   gem 'factory_bot_rails'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+
   gem 'lefthook'
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -64,7 +66,6 @@ group :development do
 end
 
 group :test do
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'launchy'
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'simplecov', require: false
