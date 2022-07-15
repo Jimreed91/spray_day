@@ -22,14 +22,7 @@
         </li>
       </ul>
     </div>
-      <div class= "nav-item" style="padding-right: 30px;">
-      <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-      </div>
+
     <p class="navbar-text float-right"> Logged in as <strong><%= user_signed_in? ? current_user.email : "...Nobody actually" %></strong>. </p>
 
       <div class="nav-item dropdown align-">
