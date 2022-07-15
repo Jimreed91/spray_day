@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'products/new', to: 'products#new'
   get 'products/:id', to: 'products#show', as: :product
   get 'products/', to: 'products#index'
-  get 'products/:id/edit', to: 'products#edit', as: :edit_product
-  delete 'products/destroy', to: 'products#destroy'
+  get 'products/:id/edit', to: 'products#edit'
+  delete 'products/:id', to: 'products#destroy'
   patch 'products/:id', to: 'products#update'
 
   devise_for :users
