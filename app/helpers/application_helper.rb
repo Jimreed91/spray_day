@@ -7,4 +7,8 @@ module ApplicationHelper
     model_string = model.model_name.human.downcase.pluralize
     "/#{model_string}/#{model.id}/edit"
   end
+
+  def flash_errors(model)
+    flash.now[:alert] = model.errors.full_messages.to_sentence
+  end
 end
