@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'products/create'
+  get 'products/new'
+  get 'products/show'
+  get 'products/index'
+  get 'products/edit'
+  get 'products/destroy'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # get '/pages', to: 'pages/#main'
