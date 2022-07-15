@@ -6,6 +6,8 @@
   <%= form.text_field :name %> <br>
   <%= form.label :Rate_per_ha%>
   <%= form.number_field :rate_per_ha, in: 0.1..20, step: 0.1 %>
-  <%= form.hidden_field :farm, value: current_user.farm.id%>
+  <%= form.label :liquid %>
+  <%= form.check_box :liquid %>
+  <%= form.hidden_field :farm_id, value: current_user.farm.id%>
   <%= form.submit %>
   <% end %>
