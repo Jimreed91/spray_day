@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to @product
     else
-      flash.now[:alert] = @product.errors.full_messages.to_sentence
+      flash_errors(@product)
       render :new
     end
   end
@@ -24,26 +24,26 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
-    flash.now[:alert] = @product.errors.full_messages.to_sentence
+    load_product
+    flash_errors(@product)
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    load_product
     @product.delete
     redirect_to products_path
     flash[:notice] = "Product \'#{@product.name}\' deleted"
   end
 
   def update
-    @product = Product.find(params[:id])
+    load_product
     @product.update(product_params)
     if @product.save
       redirect_to @product
-      flash[:notice] = "Product \'#{@product.name}\' edited successfully"
+      flash[:notice] = "Product \'#{@product.name}\' edited"
     else
       render :new
-      flash.now[:alert] = @product.errors.full_messages.to_sentence
+      flash_errors(@product)
     end
   end
 
@@ -51,5 +51,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :rate_per_ha, :liquid, :farm_id)
+  end
+
+  def load_product
+    @product = Product.find(params[:id])
   end
 end
