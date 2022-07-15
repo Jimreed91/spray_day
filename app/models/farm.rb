@@ -2,5 +2,6 @@
 
 class Farm < ApplicationRecord
   has_many :crops, dependent: :destroy
+  has_many :products, dependent: :destroy
   belongs_to :user
 end

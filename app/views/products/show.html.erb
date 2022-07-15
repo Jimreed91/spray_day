@@ -1,0 +1,12 @@
+<h2>Products</h2>
+
+<ul>
+  <li>Name: <%= @product.name %></li>
+  <li>Rate/ha: <%= @product.rate_per_ha %></li>
+  <li>Liquid/solid: <%= @product.liquid ? "Liquid product" : "Powder/granule" %></li>
+
+</ul>
+
+<ul class="list-inline">
+  <li><%= link_to "Index", products_url, class: "btn btn-primary"%></li>
+ </ul>

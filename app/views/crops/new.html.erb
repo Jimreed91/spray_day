@@ -3,16 +3,16 @@
 
 <%= form_with model: @crop do |form| %>
   <%= form.label("Crop name") %>
-  <%= form.text_field(:name) %>
+  <%= form.text_field(:name) %> <br>
   <%= form.label("Year planted") %>
-  <%= form.text_field(:year) %>
+  <%= form.text_field(:year) %> <br>
   <%= form.label("Hectares") %>
-  <%= form.text_field(:hectares) %>
+  <%= form.text_field(:hectares) %> <br>
   <%= form.label("Row spacing(m)") %>
-  <%= form.text_field(:row_spacing) %>
+  <%= form.text_field(:row_spacing) %> <br>
   <%= form.label("Farm") %>
   <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
   <%= form.select :farm_id,
-    options_from_collection_for_select(@farms, 'id', 'name') %>
+    options_from_collection_for_select(@farms, 'id', 'name') %> <br>
   <%= form.submit %>
 <% end %>
