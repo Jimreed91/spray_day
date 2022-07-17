@@ -35,6 +35,6 @@ RSpec.describe 'crops', type: :feature do
     visit crops_path
     click_button('Options')
     click_on('Delete')
-    expect(page).not_to have_content('cartoon foxes')
+    expect(page).to have_content('\'cartoon foxes\' deleted')
   end
 end

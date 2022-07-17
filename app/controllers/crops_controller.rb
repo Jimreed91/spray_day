@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-include ApplicationHelper
+
 # Obligatory comment
 class CropsController < ApplicationController
   def index
