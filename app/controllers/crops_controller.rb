@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+include ApplicationHelper
 # Obligatory comment
 class CropsController < ApplicationController
   def index
@@ -20,8 +20,10 @@ class CropsController < ApplicationController
 
     if @crop.save
       redirect_to crop_path(@crop)
+      flash_notice(@crop, 'created')
     else
       render :new, status: :unprocessable_entity
+      flash_errors(@crop)
     end
   end
 
@@ -36,8 +38,10 @@ class CropsController < ApplicationController
 
     if @crop.save
       redirect_to crop_path(@crop)
+      flash_notice(@crop, 'updated')
     else
       render :new, status: :unprocessable_entity
+      flash_errors(@crop)
     end
   end
 
@@ -45,6 +49,7 @@ class CropsController < ApplicationController
     @crop = Crop.find(params[:id])
     @crop.delete
     redirect_to crops_path
+    flash_notice(@crop, 'deleted')
   end
 
   private

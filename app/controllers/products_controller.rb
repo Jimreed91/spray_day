@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
     if @product.save
       redirect_to @product
+      flash_notice(@product, 'created')
     else
       flash_errors(@product)
       render :new
@@ -32,7 +33,7 @@ class ProductsController < ApplicationController
     load_product
     @product.delete
     redirect_to products_path
-    flash[:notice] = "Product \'#{@product.name}\' deleted"
+    flash_notice(@product, 'deleted')
   end
 
   def update
@@ -40,7 +41,7 @@ class ProductsController < ApplicationController
     @product.update(product_params)
     if @product.save
       redirect_to @product
-      flash[:notice] = "Product \'#{@product.name}\' edited"
+      flash_notice(@product, 'updated')
     else
       render :new
       flash_errors(@product)
