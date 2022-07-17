@@ -11,4 +11,8 @@ module ApplicationHelper
   def flash_errors(model)
     flash.now[:alert] = model.errors.full_messages.to_sentence
   end
+
+  def flash_notice(model, message)
+    flash[:notice] = "#{model.model_name.human.downcase} \'#{model.name}\' #{message}"
+  end
 end
