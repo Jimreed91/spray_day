@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'crops/:id', to: 'crops#show', as: :crop
   post '/crops', to: 'crops#create'
   get '/crops', to: 'crops#index'
-  get 'crops/:id/edit', to: 'crops#edit', as: :edit_crop
+  get 'crops/:id/edit', to: 'crops#edit'
   patch 'crops/:id', to: 'crops#update'
   delete 'crops/:id', to: 'crops#destroy'
 
@@ -26,4 +26,12 @@ Rails.application.routes.draw do
   get 'farms/:id', to: 'farms#show', as: :farm
   post 'farms', to: 'farms#create'
   get 'farms/', to: 'farms#index'
+
+  get 'sprayers/new', to: 'sprayers#new'
+  post 'sprayers', to: 'sprayers#create'
+  get 'sprayers/:id', to: 'sprayers#show', as: :sprayer
+  get 'sprayers', to: 'sprayers#index'
+  get 'sprayers/:id/edit', to: 'sprayers#edit'
+  patch 'sprayers/:id', to: 'sprayers#update'
+  delete 'sprayers/:id', to: 'sprayers#destroy'
 end

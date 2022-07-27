@@ -1,0 +1,8 @@
+<%= form_with  model: @sprayer do |form|%>
+  <%= form.label :Sprayer_name %>
+  <%= form.text_field :name  %>
+  <%= form.label :Capacity_in_litres %>
+  <%= form.number_field :capacity %>
+  <%= form.hidden_field :farm_id, value: current_user.farm.id%>
+  <%= form.submit %>
+<% end %>
