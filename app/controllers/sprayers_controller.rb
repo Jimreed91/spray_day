@@ -23,6 +23,35 @@ class SprayersController < ApplicationController
     @sprayer = Sprayer.find(params[:id])
   end
 
+  def update
+    @sprayer = Sprayer.find(params[:id])
+      if @sprayer.update(sprayer_params)
+        flash_notice(@sprayer, 'updated')
+        redirect_to @sprayer
+      else
+        flash_errors(@sprayer)
+        render 'edit'
+      end
+  end
+
+  def edit
+    @sprayer = Sprayer.find(params[:id])
+  end
+
+
+  def destroy
+    @sprayer = Sprayer.find(params[:id])
+    if @sprayer.destroy
+      flash_notice(@sprayer, 'deleted')
+      redirect_to sprayers_path
+    else
+      flash_errors(@sprayer)
+      redirect_to sprayers_path
+    end
+  end
+
+
+
   private
 
   def sprayer_params

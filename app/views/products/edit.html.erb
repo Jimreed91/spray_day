@@ -1,7 +1,7 @@
 <h1>Products#edit</h1>
 <p>Find me in app/views/products/edit.html.erb</p>
 
-<%= form_with(model: @product) do |form| %>
+<%= form_with model: @product do |form| %>
   <%= form.label :Product_name %>
   <%= form.text_field :name %> <br>
   <%= form.label :Rate_per_ha%>
