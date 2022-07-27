@@ -31,9 +31,13 @@ class ProductsController < ApplicationController
 
   def destroy
     load_product
-    @product.delete
-    redirect_to products_path
-    flash_notice(@product, 'deleted')
+    if @product.delete
+      redirect_to products_path
+      flash_notice(@product, 'deleted')
+    else
+      redirect_to products_path
+      flash_errors(@product)
+    end
   end
 
   def update
