@@ -80,6 +80,12 @@
           null
         ]
       },
+      "/home/james/code/Jimreed91/spray_day/app/helpers/sprayer_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/james/code/Jimreed91/spray_day/app/models/crop.rb": {
         "lines": [
           null,
@@ -104,6 +110,14 @@
         ]
       },
       "/home/james/code/Jimreed91/spray_day/app/models/product.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/james/code/Jimreed91/spray_day/app/models/sprayer.rb": {
         "lines": [
           1,
           1,
@@ -298,6 +312,44 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/james/code/Jimreed91/spray_day/app/controllers/sprayers_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
           null,
           0,
           0,
@@ -309,12 +361,44 @@
           0,
           0,
           0,
-          0,
-          null,
-          0,
           null,
           0,
           0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
           0,
           null,
           0,
@@ -353,6 +437,6 @@
         }
       }
     },
-    "timestamp": 1658724365
+    "timestamp": 1658901813
   }
 }
