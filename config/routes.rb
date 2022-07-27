@@ -26,4 +26,9 @@ Rails.application.routes.draw do
   get 'farms/:id', to: 'farms#show', as: :farm
   post 'farms', to: 'farms#create'
   get 'farms/', to: 'farms#index'
+
+  get 'sprayers/new', to: 'sprayers#new'
+  post 'sprayers', to: 'sprayers#create'
+  get 'sprayers/:id', to: 'sprayers#show', as: :sprayer
+  get 'sprayers', to: 'sprayers#index'
 end

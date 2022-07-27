@@ -1,0 +1,19 @@
+<h1>Sprayers</h1>
+
+<ul class="list-inline">
+  <%= link_to "Add", sprayers_new_path, class: "btn btn-success" %>
+</ul>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Sprayer</th>
+      <th scope="col">Capacity(L)</th>
+      <th scope="col">Location</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render 'row' %>
+   </tbody>
+</table>
