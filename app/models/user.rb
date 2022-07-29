@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one :farm, dependent: :destroy
   has_many :crops, through: :farm
   has_many :products, through: :farm
+  has_many :spray_programs, through: :farm
   after_create :create_farm
 
   private
