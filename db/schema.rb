@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_29_102459) do
+ActiveRecord::Schema.define(version: 2022_07_29_131527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,26 @@ ActiveRecord::Schema.define(version: 2022_07_29_102459) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["farm_id"], name: "index_products_on_farm_id"
+  end
+
+  create_table "program_crops", force: :cascade do |t|
+    t.bigint "crop_id", null: false
+    t.bigint "spray_program_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crop_id"], name: "index_program_crops_on_crop_id"
+    t.index ["spray_program_id"], name: "index_program_crops_on_spray_program_id"
+  end
+
+  create_table "program_doses", force: :cascade do |t|
+    t.decimal "total_dose"
+    t.decimal "tank_dose"
+    t.bigint "product_id", null: false
+    t.bigint "spray_program_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_program_doses_on_product_id"
+    t.index ["spray_program_id"], name: "index_program_doses_on_spray_program_id"
   end
 
   create_table "program_sprayers", force: :cascade do |t|
@@ -90,6 +110,10 @@ ActiveRecord::Schema.define(version: 2022_07_29_102459) do
   add_foreign_key "crops", "farms"
   add_foreign_key "farms", "users"
   add_foreign_key "products", "farms"
+  add_foreign_key "program_crops", "crops"
+  add_foreign_key "program_crops", "spray_programs"
+  add_foreign_key "program_doses", "products"
+  add_foreign_key "program_doses", "spray_programs"
   add_foreign_key "program_sprayers", "spray_programs"
   add_foreign_key "program_sprayers", "sprayers"
   add_foreign_key "spray_programs", "farms"
