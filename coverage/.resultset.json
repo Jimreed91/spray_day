@@ -15,6 +15,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           null,
@@ -94,6 +95,7 @@
           1,
           1,
           null,
+          null,
           1,
           null
         ]
@@ -107,6 +109,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -115,11 +118,62 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/home/james/code/Jimreed91/spray_day/app/models/program_crop.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/james/code/Jimreed91/spray_day/app/models/program_dose.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/james/code/Jimreed91/spray_day/app/models/program_sprayer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/james/code/Jimreed91/spray_day/app/models/spray_program.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/home/james/code/Jimreed91/spray_day/app/models/sprayer.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
@@ -432,6 +486,6 @@
         }
       }
     },
-    "timestamp": 1658905813
+    "timestamp": 1659105836
   }
 }
