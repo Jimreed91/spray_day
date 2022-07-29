@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_29_100317) do
+ActiveRecord::Schema.define(version: 2022_07_29_102459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(version: 2022_07_29_100317) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["farm_id"], name: "index_products_on_farm_id"
+  end
+
+  create_table "program_sprayers", force: :cascade do |t|
+    t.bigint "sprayer_id", null: false
+    t.bigint "spray_program_id", null: false
+    t.decimal "litres_per_min"
+    t.decimal "speed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["spray_program_id"], name: "index_program_sprayers_on_spray_program_id"
+    t.index ["sprayer_id"], name: "index_program_sprayers_on_sprayer_id"
   end
 
   create_table "spray_programs", force: :cascade do |t|
@@ -79,6 +90,8 @@ ActiveRecord::Schema.define(version: 2022_07_29_100317) do
   add_foreign_key "crops", "farms"
   add_foreign_key "farms", "users"
   add_foreign_key "products", "farms"
+  add_foreign_key "program_sprayers", "spray_programs"
+  add_foreign_key "program_sprayers", "sprayers"
   add_foreign_key "spray_programs", "farms"
   add_foreign_key "sprayers", "farms"
 end
