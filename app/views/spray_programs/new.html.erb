@@ -1,0 +1,8 @@
+<h1>New Spray Program</h1>
+
+<%= form_with model: @spray_program do |form|%>
+  <%= form.label :Date %>
+  <%= form.date_select :date %> <br>
+  <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
+  <%= form.submit %>
+<% end %>
