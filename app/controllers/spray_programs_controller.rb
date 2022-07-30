@@ -13,7 +13,6 @@ class SprayProgramsController < ApplicationController
     else
       flash_errors(@spray_program)
       render 'new'
-
     end
   end
 
