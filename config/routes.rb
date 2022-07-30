@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   get 'sprayers/:id/edit', to: 'sprayers#edit'
   patch 'sprayers/:id', to: 'sprayers#update'
   delete 'sprayers/:id', to: 'sprayers#destroy'
+
+  resources :spray_programs
 end
