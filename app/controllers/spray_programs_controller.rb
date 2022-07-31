@@ -30,7 +30,7 @@ class SprayProgramsController < ApplicationController
 
   def update
     @spray_program = SprayProgram.find(params[:id])
-    if @spray_program.update(params[:spray_program])
+    if @spray_program.update(spray_program_params)
       flash[:success] = "Spray program was successfully updated"
       redirect_to @spray_program
     else
@@ -53,6 +53,6 @@ class SprayProgramsController < ApplicationController
   private
 
   def spray_program_params
-    params.require(:spray_program).permit(:date, :farm_id, program_sprayer_attributes: %i[sprayer_id id])
+    params.require(:spray_program).permit(:date, :farm_id, program_sprayer_attributes: %i[sprayer_id id litres_per_min speed])
   end
 end
