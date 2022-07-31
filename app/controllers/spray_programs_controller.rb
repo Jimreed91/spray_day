@@ -24,6 +24,32 @@ class SprayProgramsController < ApplicationController
     @spray_program = SprayProgram.find(params[:id])
   end
 
+  def edit
+    @spray_program = SprayProgram.find(params[:id])
+  end
+
+  def update
+    @spray_program = SprayProgram.find(params[:id])
+    if @spray_program.update(params[:spray_program])
+      flash[:success] = "Spray program was successfully updated"
+      redirect_to @spray_program
+    else
+      flash[:error] = "Something went wrong"
+      render 'edit'
+    end
+  end
+
+
+  def destroy
+    @spray_program = SprayProgram.find(params[:id])
+    if @spray_program.destroy
+      flash[:success] = 'Object was successfully deleted.'
+    else
+      flash[:error] = 'Something went wrong'
+    end
+    redirect_to spray_programs_url
+  end
+
   private
 
   def spray_program_params
