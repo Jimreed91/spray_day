@@ -4,7 +4,7 @@
 module ApplicationHelper
   # Method to build edit path for any model (used in shared edit/view/destroy dropdown)
   def edit_path(model)
-    model_string = model.model_name.human.downcase.pluralize
+    model_string = model.model_name.plural
     "/#{model_string}/#{model.id}/edit"
   end
 
@@ -13,6 +13,6 @@ module ApplicationHelper
   end
 
   def flash_notice(model, message)
-    flash[:notice] = "#{model.model_name.human.downcase} \'#{model.name}\' #{message}"
+    flash[:notice] = "#{model.model_name.singular} \'#{model.name}\' #{message}"
   end
 end
