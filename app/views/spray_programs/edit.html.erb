@@ -1,0 +1,20 @@
+
+<%= form_for @spray_program do |form|%>
+  <%= form.label :Date %>
+
+  <%= form.date_select :date %> <br>
+  <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
+
+    <%= form.fields_for :program_sprayer do |spray_form| %>
+
+        <%= spray_form.label :sprayer %>
+        <%= spray_form.collection_select :sprayer_id, Sprayer.all, :id, :name %>
+        <h3>Config</h3>
+        <%= spray_form.label "Output(L/min)" %>
+        <%= spray_form.number_field :litres_per_min %> <br>
+        <%= spray_form.label "Speed km/h" %>
+        <%= spray_form.number_field :speed %> <br>
+    <% end %>
+  <%# <%= form.collection_select :sprayer, program_sprayer_id, Sprayer.all.where(farm: current_user), :name,  prompt: true %>
+  <%= form.submit %>
+<% end %>
