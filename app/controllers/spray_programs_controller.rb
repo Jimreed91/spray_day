@@ -1,12 +1,14 @@
+
 class SprayProgramsController < ApplicationController
   def new
     @spray_program = SprayProgram.new
     @spray_program.build_program_sprayer
+    @spray_program.program_crops.build
+
   end
 
   def create
     @spray_program = SprayProgram.new(spray_program_params)
-
     if @spray_program.save
       flash[:notice] = 'Program created'
       redirect_to @spray_program
@@ -53,6 +55,8 @@ class SprayProgramsController < ApplicationController
   private
 
   def spray_program_params
-    params.require(:spray_program).permit(:date, :farm_id, program_sprayer_attributes: %i[sprayer_id id litres_per_min speed])
+    params.require(:spray_program).permit(:date, :farm_id,
+      program_sprayer_attributes: %i[sprayer_id id litres_per_min speed],
+      program_crops_attributes: %i[crop_id id  _destroy])
   end
 end

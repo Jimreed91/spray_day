@@ -6,6 +6,7 @@ import Rails from '@rails/ujs'
 import Turbolinks from 'turbolinks'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
+
 //
 // import 'bootstrap'
 // Bootstrap linked from js folder /..
@@ -13,14 +14,17 @@ import 'channels'
 
 // Import the specific modules you may need (Modal, Alert, etc)
 // import { Tooltip, Popover } from 'bootstrap'
-require('@popperjs/core')
+// require("jquery")
+// require("@nathanvda/cocoon")
+
+// require('@popperjs/core')
 import 'bootstrap/dist/js/bootstrap'
 import "bootstrap/dist/css/bootstrap";
 import "../../assets/stylesheets/application.scss"
+import "@oddcamp/cocoon-vanilla-js";
+
+
 // require('bootstrap')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-require("jquery")
-require("@nathanvda/cocoon")
