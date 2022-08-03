@@ -1,9 +1,19 @@
 <h1>Spray program : <%= @spray_program.date %>e</h1>
 
 <h2>Sprayer</h2>
-  <%= @spray_program.sprayer.name %>
+  <ul>
+    <li> Name: <%= @spray_program.sprayer.name %> </li>
+    <li> Capacity: <%= @spray_program.sprayer.capacity %>L </li>
+  </ul>
+<h3>Config</h3>
+  <ul>
+    <li>Output: <%= @spray_program.program_sprayer.litres_per_min %> l/min </li>
+    <li>Speed: <%= @spray_program.program_sprayer.speed %> km/h</li>
+  </ul>
 <h2>Crops</h2>
-
+   <% @spray_program.crops.each do |crop| %>
+      <p><%= crop.name %></p>
+    <% end %>
 <h2>Products</h2>
 
 <%= link_to "Index", spray_programs_path, class: "btn btn-success"%>
