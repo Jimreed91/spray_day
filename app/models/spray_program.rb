@@ -15,4 +15,13 @@ class SprayProgram < ApplicationRecord
   accepts_nested_attributes_for :program_doses, reject_if: :all_blank, allow_destroy: true
 
   # validates_associated :program_sprayer
+
+  def litres_per_ha
+    output =  program_sprayer.litres_per_min
+    spacing = crops.first.row_spacing
+    speed = program_sprayer.speed
+    ((output * 600) / (spacing * speed)).round(2)
+  end
+
+
 end
