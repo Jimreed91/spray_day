@@ -1,10 +1,8 @@
-
 class SprayProgramsController < ApplicationController
   def new
     @spray_program = SprayProgram.new
     @spray_program.build_program_sprayer
     @spray_program.program_crops.build
-
   end
 
   def create
@@ -33,14 +31,13 @@ class SprayProgramsController < ApplicationController
   def update
     @spray_program = SprayProgram.find(params[:id])
     if @spray_program.update(spray_program_params)
-      flash[:success] = "Spray program was successfully updated"
+      flash[:success] = 'Spray program was successfully updated'
       redirect_to @spray_program
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'edit'
     end
   end
-
 
   def destroy
     @spray_program = SprayProgram.find(params[:id])
@@ -56,7 +53,7 @@ class SprayProgramsController < ApplicationController
 
   def spray_program_params
     params.require(:spray_program).permit(:date, :farm_id,
-      program_sprayer_attributes: %i[sprayer_id id litres_per_min speed],
-      program_crops_attributes: %i[crop_id id  _destroy])
+                                          program_sprayer_attributes: %i[sprayer_id id litres_per_min speed],
+                                          program_crops_attributes: %i[crop_id id _destroy])
   end
 end
