@@ -11,7 +11,9 @@
     <li>Speed: <%= @spray_program.program_sprayer.speed %> km/h</li>
   </ul>
 <h2>Crops</h2>
-
+   <% @spray_program.crops.each do |crop| %>
+      <p><%= crop.name %></p>
+    <% end %>
 <h2>Products</h2>
 
 <%= link_to "Index", spray_programs_path, class: "btn btn-success"%>

@@ -8,13 +8,24 @@
     <%= form.fields_for :program_sprayer do |spray_form| %>
 
         <%= spray_form.label :sprayer %>
-        <%= spray_form.collection_select :sprayer_id, Sprayer.all, :id, :name %>
+        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user), :id, :name %>
         <h3>Config</h3>
         <%= spray_form.label "Output(L/min)" %>
         <%= spray_form.number_field :litres_per_min %> <br>
         <%= spray_form.label "Speed km/h" %>
         <%= spray_form.number_field :speed %> <br>
     <% end %>
+     <h2>Crops</h2>
+    <div id="program_crops">
+     <%= form.fields_for :program_crops do |program_crop_form| %>
+      <%= render 'program_crop_fields', f: program_crop_form%>
+    <% end %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association "Add crop", form, :program_crops %>
+    </div>
+  <%# <%= form.collection_select :sprayer, program_sprayer_id, Sprayer.all), :name,  prompt: true %>
+
   <%# <%= form.collection_select :sprayer, program_sprayer_id, Sprayer.all.where(farm: current_user), :name,  prompt: true %>
   <%= form.submit %>
 <% end %>
