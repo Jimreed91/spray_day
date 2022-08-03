@@ -3,6 +3,7 @@ class SprayProgramsController < ApplicationController
     @spray_program = SprayProgram.new
     @spray_program.build_program_sprayer
     @spray_program.program_crops.build
+    @spray_program.program_doses.build
   end
 
   def create
@@ -54,7 +55,7 @@ class SprayProgramsController < ApplicationController
   def spray_program_params
     params.require(:spray_program).permit(:date, :farm_id,
                                           program_sprayer_attributes: %i[sprayer_id id litres_per_min speed],
-                                          program_crops_attributes: %i[crop_id id _destroy]),
-                                          program_dose_attributes: %i[dose_id id _destroy]
+                                          program_crops_attributes: %i[crop_id id _destroy],
+                                          program_doses_attributes: %i[product_id id _destroy])
   end
 end
