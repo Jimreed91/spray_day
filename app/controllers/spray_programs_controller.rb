@@ -54,6 +54,7 @@ class SprayProgramsController < ApplicationController
   def spray_program_params
     params.require(:spray_program).permit(:date, :farm_id,
                                           program_sprayer_attributes: %i[sprayer_id id litres_per_min speed],
-                                          program_crops_attributes: %i[crop_id id _destroy])
+                                          program_crops_attributes: %i[crop_id id _destroy]),
+                                          program_dose_attributes: %i[dose_id id _destroy]
   end
 end
