@@ -2,7 +2,7 @@
 <div class="nested-fields">
   <div class="field">
     <%= f.label :name %>
-    <%= f.collection_select :crop_id, Crop.all, :id, :name %>
+    <%= f.collection_select :crop_id, Crop.all.where(farm: current_user), :id, :name %>
     </div>
     <%= link_to_remove_association "Remove crop", f %>
 </div>

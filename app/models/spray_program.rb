@@ -22,6 +22,4 @@ class SprayProgram < ApplicationRecord
     speed = program_sprayer.speed
     ((output * 600) / (spacing * speed)).round(2)
   end
-
-
 end
