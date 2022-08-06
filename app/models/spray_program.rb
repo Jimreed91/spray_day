@@ -24,6 +24,6 @@ class SprayProgram < ApplicationRecord
   end
 
   def total_area
-    crops.sum{|crop| crop.hectares.to_f}
+    crops.sum { |crop| crop.hectares.to_f }
   end
 end
