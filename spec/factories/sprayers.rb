@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :sprayer do
-    name { 'MyString' }
+    sequence(:name) { |n| "sprayer#{n}" }
     capacity { 1200 }
-    farm { nil }
+    association :farm
   end
 end
