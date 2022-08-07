@@ -27,7 +27,23 @@ class SprayProgram < ApplicationRecord
     crops.sum { |crop| crop.hectares.to_f }
   end
 
-  def ha_per_tank
+  def ha_per_full_tank
     (sprayer.capacity / litres_per_ha).to_f
   end
+
+  def total_mix
+    (total_area * litres_per_ha).to_f
+  end
+
+  def number_of_tanks(tanks = 1)
+    return tanks if (total_mix / tanks) <= sprayer.capacity
+
+    number_of_tanks(tanks + 1)
+  end
+
+  def mix_per_tank
+    total_mix / number_of_tanks
+  end
 end
+# return minimum number of equal tanks required to equal total mix
+# if sprayer capacity greater than the divided total mix return number divided by

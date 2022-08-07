@@ -27,6 +27,7 @@ class SprayProgramsController < ApplicationController
 
   def edit
     @spray_program = SprayProgram.find(params[:id])
+    raise
   end
 
   def update

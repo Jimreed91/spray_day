@@ -8,5 +8,7 @@ class ProgramDose < ApplicationRecord
     (spray_program.total_area * product.rate_per_ha).to_f
   end
 
-  def tank_dose; end
+  def tank_dose
+    total_dose / spray_program.number_of_tanks
+  end
 end
