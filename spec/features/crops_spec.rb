@@ -16,6 +16,7 @@ RSpec.describe 'crops', type: :feature do
   end
 
   it 'user edit a crop and see their changes' do
+    binding.pry
     user = create(:user)
     create(:crop, name: 'cartoon foxes', farm: user.farm)
     login_as(user)
