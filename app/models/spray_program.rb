@@ -26,4 +26,8 @@ class SprayProgram < ApplicationRecord
   def total_area
     crops.sum { |crop| crop.hectares.to_f }
   end
+
+  def ha_per_tank
+    (sprayer.capacity / litres_per_ha).to_f
+  end
 end
