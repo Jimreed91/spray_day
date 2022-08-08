@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   has_many :program_doses, dependent: :destroy
 
   validates :name, :rate_per_ha, presence: true
-  validates :liquid, inclusion: { in: [ true, false ] }
+  validates :liquid, inclusion: { in: [true, false] }
   validates_associated :farm
-
 end
