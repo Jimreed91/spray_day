@@ -3,9 +3,7 @@
     <tr>
       <th scope="row"><%= "#{i + 1}" %></th>
       <td><%= p.name %></td>
-      <td><%= p.rate_per_ha %></td>
-      <td><%= p.liquid %></td>
-      <td><%= p.farm.name %></td>
+      <td><%= p.rate_per_ha %> <%= to_unit(p.liquid) %></td>
       <td><%= render 'shared/model_dropdown', model: p %></td>
     </tr>
 
