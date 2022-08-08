@@ -11,5 +11,13 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ProductsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'to_unit' do
+    it 'returns \'l\' if passed true' do
+      expect(to_unit(true)).to eq('L')
+    end
+
+    it 'returns \'Kg\' if passed false' do
+      expect(to_unit(false)).to eq('Kg')
+    end
+  end
 end
