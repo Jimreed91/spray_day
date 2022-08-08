@@ -6,5 +6,7 @@ class Crop < ApplicationRecord
   has_many :program_crops, dependent: :nullify
   has_many :spray_programs, through: :program_crops
 
-  validates :name, presence: true
+  validates :name, :hectares, :row_spacing, presence: true
+  validates_associated :farm
+
 end

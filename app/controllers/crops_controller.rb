@@ -3,7 +3,7 @@
 # Obligatory comment
 class CropsController < ApplicationController
   def index
-    @crops = Crop.where(farm: current_user)
+    @crops = Crop.where(farm: current_user.farm)
   end
 
   def show

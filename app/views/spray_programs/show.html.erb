@@ -10,18 +10,28 @@
     <li>Output: <%= @spray_program.program_sprayer.litres_per_min %> l/min </li>
     <li>Speed: <%= @spray_program.program_sprayer.speed %> km/h</li>
     <li>Rate: <%= @spray_program.litres_per_ha %></li>
+    <li>Hectares per full tank: <%= @spray_program.ha_per_full_tank %></li>
   </ul>
-<h2>Crops</h2>
+<%=s = @spray_program %>
+  <h2>Spray details</h2>
+    <p>Litres per hectare: <%= s.litres_per_ha %></p>
+    <p>Total area: <%= s.total_area %></p>
+    <p>Total mix: <%= s.total_mix %></p>
+    <p>Number of tanks: <%= s.number_of_tanks %></p>
+    <p>Mix vol. per tank: <%= s.mix_per_tank %></p>
+
+<h2>Products</h2>
+  <% @spray_program.program_doses.each do |dose| %>
+    <p>Name: <%= dose.product.name %></p>
+    <p>Rate: <%= dose.product.rate_per_ha.round(3)%> /Ha</p>
+    <p>Total dose: <%= dose.total_dose %></p>
+    <p>Dose per tank: <%= dose.tank_dose %></p>
+  <% end %>
+
+  <h2>Crops</h2>
    <% @spray_program.crops.each do |crop| %>
       <p>Name:<%= crop.name %></p>
       <p>Hectares:<%= crop.hectares.round(2) %></p>
       <p>Row spacing:<%= crop.row_spacing.round(2) %></p>
     <% end %>
-<h2>Products</h2>
-  <% @spray_program.products.each do |product| %>
-    <p>Name: <%= product.name %></p>
-    <p>Rate: <%= product.rate_per_ha.round(3)%> /Ha</p>
-  <% end %>
-
-  <% raise %>
 <%= link_to "Index", spray_programs_path, class: "btn btn-success"%>

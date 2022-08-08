@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :program_crop do
-    crop { nil }
-    spray_program { nil }
+    crop { create(:crop) }
+    association :spray_program
   end
 end
