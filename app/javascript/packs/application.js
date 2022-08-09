@@ -20,6 +20,7 @@ import 'channels'
 // require('@popperjs/core')
 import 'bootstrap/dist/js/bootstrap'
 import "bootstrap/dist/css/bootstrap";
+import "@fortawesome/fontawesome-free/css/all"
 // import "../stylesheets/application"
 import "@oddcamp/cocoon-vanilla-js";
 
