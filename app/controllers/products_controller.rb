@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.where(farm: current_user)
+    @products = Product.where(farm: current_user.farm)
   end
 
   def edit

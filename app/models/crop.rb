@@ -8,5 +8,4 @@ class Crop < ApplicationRecord
 
   validates :name, :hectares, :row_spacing, presence: true
   validates_associated :farm
-
 end
