@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="col"><%= @spray_program.total_area %></th>
+      <th scope="col"><%= @spray_program.total_area.round(2) %></th>
       <th scope="col"><%= @spray_program.total_mix %> L</th>
       <th scope="col"><%= @spray_program.number_of_tanks%> </th>
       <th scope="col"><%= @spray_program.mix_per_tank.round(2) %> L</th>
