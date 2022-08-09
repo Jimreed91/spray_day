@@ -20,7 +20,7 @@ RSpec.describe 'crops', type: :feature do
     create(:crop, name: 'cartoon foxes', farm: user.farm)
     login_as(user)
     visit crops_path
-    click_button('Options')
+    click_button('~')
     click_on('Edit')
     fill_in('crop_name', with: 'chunky bacon')
     click_on('commit')
@@ -33,7 +33,7 @@ RSpec.describe 'crops', type: :feature do
     create(:crop, name: 'cartoon foxes', farm: user.farm)
     login_as(user)
     visit crops_path
-    click_button('Options')
+    click_button('~')
     click_on('Delete')
     expect(page).to have_content('\'cartoon foxes\' deleted')
   end
