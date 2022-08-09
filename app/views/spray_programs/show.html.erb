@@ -1,24 +1,15 @@
 <h1>Spray program : <%= @spray_program.date %></h1>
-
+<%s = @spray_program %>
 <h2>Sprayer</h2>
   <ul>
-    <li> Name: <%= @spray_program.sprayer.name %> </li>
+
     <li> Capacity: <%= @spray_program.sprayer.capacity %>L </li>
   </ul>
-<h3>Config</h3>
-  <ul>
-    <li>Output: <%= @spray_program.program_sprayer.litres_per_min %> l/min </li>
-    <li>Speed: <%= @spray_program.program_sprayer.speed %> km/h</li>
-    <li>Rate: <%= @spray_program.litres_per_ha %></li>
-    <li>Hectares per full tank: <%= @spray_program.ha_per_full_tank %></li>
-  </ul>
-<%=s = @spray_program %>
+<h3>Sprayer Configuration</h3>
+  <%= render 'spray_config' %>
+
   <h2>Spray details</h2>
-    <p>Litres per hectare: <%= s.litres_per_ha %></p>
-    <p>Total area: <%= s.total_area %></p>
-    <p>Total mix: <%= s.total_mix %></p>
-    <p>Number of tanks: <%= s.number_of_tanks %></p>
-    <p>Mix vol. per tank: <%= s.mix_per_tank %></p>
+  <%= render 'spray_details' %>
 
 <h2>Products</h2>
   <% @spray_program.program_doses.each do |dose| %>

@@ -28,7 +28,7 @@ class SprayProgram < ApplicationRecord
   end
 
   def ha_per_full_tank
-    (sprayer.capacity / litres_per_ha).to_f
+    (sprayer.capacity / litres_per_ha).to_f.round(3)
   end
 
   def total_mix
