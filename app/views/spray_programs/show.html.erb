@@ -1,23 +1,32 @@
-<h1>Spray program : <%= @spray_program.date %></h1>
-<%s = @spray_program %>
-<h2>Sprayer</h2>
-  <ul>
+  <h1>Spray program : <%= @spray_program.date %></h1>
 
-    <li> Capacity: <%= @spray_program.sprayer.capacity %>L </li>
-  </ul>
-<h3>Sprayer Configuration</h3>
+  <h3>Sprayer Configuration</h3>
   <%= render 'spray_config' %>
 
-  <h2>Spray details</h2>
+  <h3>Spray details</h3>
   <%= render 'spray_details' %>
 
-<h2>Products</h2>
-  <% @spray_program.program_doses.each do |dose| %>
-    <p>Name: <%= dose.product.name %></p>
-    <p>Rate: <%= dose.product.rate_per_ha.round(3)%> /Ha</p>
-    <p>Total dose: <%= dose.total_dose %></p>
-    <p>Dose per tank: <%= dose.tank_dose %></p>
-  <% end %>
+  <h3>Mix details</h3>
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Total Dose</li>
+        <th scope="col">Tank Dose</li>
+      <tr>
+    </thead>
+    <tbody>
+      <% @spray_program.program_doses.each do |dose| %>
+        <tr>
+          <th scope="col"><%= dose.product.name %></th>
+          <th scope="col"><%= dose.product.rate_per_ha %> L</th>
+          <th scope="col"><%= dose.total_dose%> </th>
+          <th scope="col"><%= dose.tank_dose.round(2) %> <%= to_unit(dose.product.liquid?) %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
   <h2>Crops</h2>
    <% @spray_program.crops.each do |crop| %>

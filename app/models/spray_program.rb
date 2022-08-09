@@ -32,7 +32,7 @@ class SprayProgram < ApplicationRecord
   end
 
   def total_mix
-    (total_area * litres_per_ha).to_f
+    (total_area * litres_per_ha).to_f.round(2)
   end
 
   def number_of_tanks(tanks = 1)
