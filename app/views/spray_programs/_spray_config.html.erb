@@ -1,0 +1,20 @@
+ <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> Sprayer</th>
+      <th scope="col">Speed</li>
+      <th scope="col">Flow/min</li>
+      <th scope="col">Flow/Ha</li>
+      <th scope="col">Ha/ Full tank </li>
+    <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="col"><%= @spray_program.sprayer.name %></td>
+      <td scope="col"><%= @spray_program.program_sprayer.speed %> Km/h</td>
+      <td scope="col"><%= @spray_program.program_sprayer.litres_per_min%> L/min</td>
+      <td scope="col"><%= @spray_program.litres_per_ha %> L/ha</td>
+      <td scope="col"><%= @spray_program.ha_per_full_tank %></td>
+    </tr>
+  </tbody>
+</table>
