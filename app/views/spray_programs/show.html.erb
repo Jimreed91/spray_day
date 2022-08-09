@@ -1,32 +1,9 @@
+ <%= link_to "Back", spray_programs_path, class: "btn btn-success m-1"%>
   <h2>Spray program review </h2>
   <h4>Scheduled for:<%= @spray_program.date.strftime("%d/%e/%Y") %></h4>
-  <%= link_to "Back", spray_programs_path, class: "btn btn-success m-2"%>
 
-  <h4 class="bg-dark">Sprayer Configuration</h4>
-  <%= render 'spray_config' %>
-  <p>
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#configForm" role="button" aria-expanded="false" aria-controls="configForm">
-    Settings
-    </a>
-  </p>
-<div class="collapse" id="configForm">
-  <div class="card card-body bg-dark">
-  <%= form_with model: @spray_program do |form|%>
-    <%= form.fields_for :program_sprayer do |spray_form| %>
-        <h3>Config</h3>
-        <%= spray_form.label :sprayer %>
-        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
-        <%= spray_form.label "Output(L/min)" %>
-        <%= spray_form.number_field :litres_per_min %> <br>
-        <%= spray_form.label "Speed km/h" %>
-        <%= spray_form.number_field :speed %> <br>
-    <% end %>
-      <%= form.submit %>
-    <% end %>
-  </div>
-</div>
   <h3>Mix details</h3>
-  <table class="table table-hover table-dark border-success">
+  <table class="table table-hover table-light border-success">
     <thead>
       <tr class="">
         <th scope="col">Product</th>
@@ -47,11 +24,43 @@
     </tbody>
   </table>
   <%= render 'spray_details' %>
-
-  <h2>Crops</h2>
+  <div class="d-flex align-items-center">
+  <h4 class="bg-light">Sprayer Configuration </h4>
+  <a class="btn btn-secondary m-2 " data-bs-toggle="collapse" href="#configFull" role="button" aria-expanded="false" aria-controls="configFull" ><i class="fas fa-bars"></i></a>
+</div>
+<div class="collapse"id="configFull">
+  <%= render 'spray_config' %>
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#configForm" role="button" aria-expanded="false" aria-controls="configForm">
+    Settings
+    </a>
+  </p>
+<div class="collapse" id="configForm">
+  <div class="card card-body bg-light">
+  <%= form_with model: @spray_program do |form|%>
+    <%= form.fields_for :program_sprayer do |spray_form| %>
+        <h3>Config</h3>
+        <%= spray_form.label :sprayer %>
+        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
+        <%= spray_form.label "Output(L/min)" %>
+        <%= spray_form.number_field :litres_per_min %> <br>
+        <%= spray_form.label "Speed km/h" %>
+        <%= spray_form.number_field :speed %> <br>
+    <% end %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>
+</div>
+<div class="d-flex align-items-center">
+   <h4>Crops</h4>
+  <a class="btn btn-secondary m-2 " data-bs-toggle="collapse" href="#crops" role="button" aria-expanded="false" aria-controls="crops" ><i class="fas fa-bars"></i></a>
+</div>
+  <div class="collapse" id="crops">
    <% @spray_program.crops.each do |crop| %>
       <p>Name:<%= crop.name %></p>
       <p>Hectares:<%= crop.hectares.round(2) %></p>
       <p>Row spacing:<%= crop.row_spacing.round(2) %></p>
     <% end %>
+   </div>
 <%= link_to "Back", spray_programs_path, class: "btn btn-success m-2"%>
