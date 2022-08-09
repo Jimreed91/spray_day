@@ -1,6 +1,7 @@
-  <h1>Spray program : <%= @spray_program.date %></h1>
+  <h2>Spray program review </h2>
+  <h4>Scheduled for:<%= @spray_program.date.strftime("%d/%e/%Y") %></h4>
 
-  <h3>Sprayer Configuration</h3>
+  <h4 class="bg-dark">Sprayer Configuration</h4>
   <%= render 'spray_config' %>
   <p>
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#configForm" role="button" aria-expanded="false" aria-controls="configForm">

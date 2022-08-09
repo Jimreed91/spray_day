@@ -15,8 +15,6 @@
   <body>
     <%= render partial: 'shared/navbar' %>
 
-      <br><br> <br>
-
     <div>
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
@@ -25,7 +23,12 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
     </div>
-
+  <div class="bg-success">
+  <div class="container bg-dark text-light  min-vh-100">
     <%= yield %>
+
+  </div>
+  </div>
+    <%= render partial: 'shared/footer'  %>
   </body>
 </html>
