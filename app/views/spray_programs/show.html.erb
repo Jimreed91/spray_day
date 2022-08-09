@@ -2,7 +2,27 @@
 
   <h3>Sprayer Configuration</h3>
   <%= render 'spray_config' %>
-
+  <p>
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#configForm" role="button" aria-expanded="false" aria-controls="configForm">
+    Link with href
+  </a>
+</p>
+<div class="collapse" id="configForm">
+  <div class="card card-body">
+  <%= form_with model: @spray_program do |form|%>
+    <%= form.fields_for :program_sprayer do |spray_form| %>
+        <%= spray_form.label :sprayer %>
+        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
+        <h3>Config</h3>
+        <%= spray_form.label "Output(L/min)" %>
+        <%= spray_form.number_field :litres_per_min %> <br>
+        <%= spray_form.label "Speed km/h" %>
+        <%= spray_form.number_field :speed %> <br>
+    <% end %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>
   <h3>Spray details</h3>
   <%= render 'spray_details' %>
 
@@ -21,7 +41,7 @@
         <tr>
           <th scope="col"><%= dose.product.name %></th>
           <th scope="col"><%= dose.product.rate_per_ha %> L</th>
-          <th scope="col"><%= dose.total_dose%> </th>
+          <th scope="col"><%= dose.total_dose%> <%= to_unit(dose.product.liquid?) %></th>
           <th scope="col"><%= dose.tank_dose.round(2) %> <%= to_unit(dose.product.liquid?) %></th>
         </tr>
       <% end %>
