@@ -2,11 +2,7 @@
 
     <tr>
       <th scope="row"><%= "#{i + 1}" %></th>
-      <td><%= p.date %></td>
-      <td><%= p.sprayer.name %></td>
-      <td><%= p.total_volume %></td>
-      <td><%= p.tanks_count %></td>
-      <td><%= p.volume_per_tank %></td>
+      <td><%= p.date.strftime("%d/%e/%Y") %></td>
       <td><%= render 'shared/model_dropdown', model: p %></td>
     </tr>
 
