@@ -1,8 +1,9 @@
 
-<div class="nested-fields">
+
+<div class="nested-fields d-flex flex-row align-items-center">
   <div class="field">
     <%= f.label :name %>
     <%= f.collection_select :crop_id, Crop.all.where(farm: current_user.farm), :id, :name %>
     </div>
-    <%= link_to_remove_association "Remove crop", f %>
+    <%= link_to_remove_association "Remove", f, class:"m-1 btn btn-sm btn-secondary" %>
 </div>

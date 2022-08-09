@@ -16,13 +16,13 @@
         <%= spray_form.number_field :speed %> <br>
     <% end %>
     <h2>Crops</h2>
-    <div id="programCrops">
+    <div id="programCrops" class="">
       <%= form.fields_for :program_crops do |program_crop_form| %>
         <%= render 'program_crop_fields', f: program_crop_form%>
       <% end %>
     </div>
     <div class="links">
-      <%= link_to_add_association "Add crop", form, :program_crops, class:"btn btn-primary" %>
+      <%= link_to_add_association "Add", form, :program_crops, class:"btn btn-sm btn-primary" %>
     </div>
     <h2>Products</h2>
     <div id="programDoses">
@@ -31,7 +31,7 @@
       <% end %>
     </div>
       <div class="links">
-        <%= link_to_add_association "Add", form, :program_doses, class:"btn btn-primary display-inline" %>
+        <%= link_to_add_association "Add", form, :program_doses, class:"btn btn-sm btn-primary display-inline" %>
       </div>
   <%= form.submit %>
 <% end %>
