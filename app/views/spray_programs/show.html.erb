@@ -1,5 +1,6 @@
   <h2>Spray program review </h2>
   <h4>Scheduled for:<%= @spray_program.date.strftime("%d/%e/%Y") %></h4>
+  <%= link_to "Back", spray_programs_path, class: "btn btn-success m-2"%>
 
   <h4 class="bg-dark">Sprayer Configuration</h4>
   <%= render 'spray_config' %>
@@ -9,12 +10,12 @@
     </a>
   </p>
 <div class="collapse" id="configForm">
-  <div class="card card-body">
+  <div class="card card-body bg-dark">
   <%= form_with model: @spray_program do |form|%>
     <%= form.fields_for :program_sprayer do |spray_form| %>
+        <h3>Config</h3>
         <%= spray_form.label :sprayer %>
         <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
-        <h3>Config</h3>
         <%= spray_form.label "Output(L/min)" %>
         <%= spray_form.number_field :litres_per_min %> <br>
         <%= spray_form.label "Speed km/h" %>
@@ -25,9 +26,9 @@
   </div>
 </div>
   <h3>Mix details</h3>
-  <table class="table table-hover table-dark">
+  <table class="table table-hover table-dark border-success">
     <thead>
-      <tr>
+      <tr class="">
         <th scope="col">Product</th>
         <th scope="col">Rate</th>
         <th scope="col">Total Dose</li>
@@ -53,4 +54,4 @@
       <p>Hectares:<%= crop.hectares.round(2) %></p>
       <p>Row spacing:<%= crop.row_spacing.round(2) %></p>
     <% end %>
-<%= link_to "Index", spray_programs_path, class: "btn btn-success"%>
+<%= link_to "Back", spray_programs_path, class: "btn btn-success m-2"%>
