@@ -8,7 +8,7 @@
   <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
     <%= form.fields_for :program_sprayer do |spray_form| %>
         <%= spray_form.label :sprayer %>
-        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user), :id, :name %>
+        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
         <h3>Config</h3>
         <%= spray_form.label "Output(L/min)" %>
         <%= spray_form.number_field :litres_per_min %> <br>
@@ -22,7 +22,7 @@
       <% end %>
     </div>
     <div class="links">
-      <%= link_to_add_association "Add crop", form, :program_crops %>
+      <%= link_to_add_association "Add crop", form, :program_crops, class:"btn btn-primary" %>
     </div>
     <h2>Products</h2>
     <div id="programDoses">
@@ -31,7 +31,7 @@
       <% end %>
     </div>
       <div class="links">
-        <%= link_to_add_association "Add product", form, :program_doses %>
+        <%= link_to_add_association "Add", form, :program_doses, class:"btn btn-primary display-inline" %>
       </div>
   <%= form.submit %>
 <% end %>

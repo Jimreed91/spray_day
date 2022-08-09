@@ -18,7 +18,7 @@ class SprayProgramsController < ApplicationController
   end
 
   def index
-    @spray_programs = SprayProgram.where(farm: current_user)
+    @spray_programs = SprayProgram.where(farm: current_user.farm)
   end
 
   def show
