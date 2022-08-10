@@ -11,9 +11,9 @@
         <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
         <h3>Config</h3>
         <%= spray_form.label "Output(L/min)" %>
-        <%= spray_form.number_field :litres_per_min %> <br>
+        <%= spray_form.number_field :litres_per_min, step: 0.1 %> <br>
         <%= spray_form.label "Speed km/h" %>
-        <%= spray_form.number_field :speed %> <br>
+        <%= spray_form.number_field :speed, step: 0.1 %> <br>
     <% end %>
     <h2>Crops</h2>
     <div id="programCrops" class="">

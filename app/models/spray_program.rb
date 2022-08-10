@@ -23,16 +23,18 @@ class SprayProgram < ApplicationRecord
     ((output * 600) / (spacing * speed)).round(2)
   end
 
-  def total_area
-    crops.sum { |crop| crop.hectares.to_f }
+  def total_area(options = {})
+    sum = crops.sum(&:hectares)
+    options[:view] == true ? sum.to_f : sum
   end
 
   def ha_per_full_tank
     (sprayer.capacity / litres_per_ha).to_f.round(3)
   end
 
-  def total_mix
-    (total_area * litres_per_ha).to_f.round(2)
+  def total_mix(options = {})
+    mix = (total_area * litres_per_ha)
+    options[:view] == true ? mix.to_f.round(options[:places]) : mix
   end
 
   def number_of_tanks(tanks = 1)
@@ -41,8 +43,9 @@ class SprayProgram < ApplicationRecord
     number_of_tanks(tanks + 1)
   end
 
-  def mix_per_tank
-    total_mix / number_of_tanks
+  def mix_per_tank(options = {})
+    mix= total_mix / number_of_tanks
+    options[:view] == true ? mix.to_f.round(:places) : mix
   end
 end
 # return minimum number of equal tanks required to equal total mix
