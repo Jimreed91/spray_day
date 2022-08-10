@@ -1,9 +1,8 @@
 
 
-<div class="nested-fields d-flex flex-row align-items-center">
+<div class="nested-fields input-group">
   <div class="field">
-    <%= f.label :name %>
-    <%= f.collection_select :crop_id, Crop.all.where(farm: current_user.farm), :id, :name ,class:'dropdown-menu'%>
+    <%= f.collection_select :crop_id, Crop.all.where(farm: current_user.farm), :id, :name , {}, {class: "form-select"}%>
     </div>
-    <%= link_to_remove_association "Remove", f, class:"m-1 btn btn-sm btn-secondary" %>
+    <%= link_to_remove_association "Remove", f, class:"btn btn-outline-secondary" %>
 </div>
