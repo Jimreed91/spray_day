@@ -1,0 +1,10 @@
+<%= form_with model: @product do |form|%>
+  <%= form.label :Product_name, class: "form-label"%>
+  <%= form.text_field :name, class: "form-control" %> <br>
+  <%= form.label :Rate_per_ha, class: "form-label"%>
+  <%= form.number_field :rate_per_ha, in: 0.1..20, step: 0.1, class: "form-control" %>
+  <%= form.label :liquid, class: "form-check-label" %>
+  <%= form.check_box :liquid, class: "form-check_input" %>
+  <%= form.hidden_field :farm_id, value: current_user.farm.id%>
+  <%= form.submit class: "btn btn-success" %>
+<% end %>
