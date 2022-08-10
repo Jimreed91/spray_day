@@ -30,10 +30,10 @@
       </ul>
     </div>
 
-    <p class="navbar-text float-right"> Logged in as <strong><%= user_signed_in? ? current_user.email : "...Nobody actually" %></strong>. </p>
+    <%# <p class="navbar-text float-right"> Logged in as <strong><%= user_signed_in? ? current_user.email : "...Nobody actually" %>
 
       <div class="nav-item dropdown align-">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+        <%= image_tag "defbg.png", class: 'avatar dropdown-toggle', id: 'navbarDropdown', 'data-bs-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, class:'dropdown-item', method: :delete %>

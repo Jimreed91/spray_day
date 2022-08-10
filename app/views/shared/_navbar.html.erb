@@ -1,5 +1,5 @@
   <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-success d-none d-sm-block" >
-  <div class="container-fluid">
+  <div class="container-fluid align-items-baseline">
     <a class="navbar-brand" href="#">Spray Day</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,10 +32,11 @@
       </ul>
     </div>
 
-    <p class="navbar-text float-right"> Logged in as <strong><%= user_signed_in? ? current_user.email : "...Nobody actually" %></strong>. </p>
+    <p class="navbar-text float-right"> Logged in as <strong class="text-light"><%= user_signed_in? ? current_user.email : "...Nobody actually" %></strong>. </p>
 
       <div class="nav-item dropdown align-">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+      <%= image_tag "defbg.png", class: 'm-2 avatar dropdown-toggle', id: 'navbarDropdown', 'data-bs-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria_expanded': 'false' %>
+
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, class:'dropdown-item', method: :delete %>
