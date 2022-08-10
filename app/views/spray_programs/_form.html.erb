@@ -1,0 +1,34 @@
+<%= form_with model: @spray_program do |form|%>
+  <%= form.label :Date %>
+
+  <%= form.date_select :date %> <br>
+  <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
+    <%= form.fields_for :program_sprayer do |spray_form| %>
+        <%= spray_form.label :sprayer %>
+        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
+        <h3>Config</h3>
+        <%= spray_form.label "Output(L/min)" %>
+        <%= spray_form.number_field :litres_per_min, step: 0.1 %> <br>
+        <%= spray_form.label "Speed km/h" %>
+        <%= spray_form.number_field :speed, step: 0.1 %> <br>
+    <% end %>
+    <h2>Crops</h2>
+    <div id="programCrops" class="">
+      <%= form.fields_for :program_crops do |program_crop_form| %>
+        <%= render 'program_crop_fields', f: program_crop_form%>
+      <% end %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association "Add", form, :program_crops, class:"btn btn-sm btn-primary" %>
+    </div>
+    <h2>Products</h2>
+    <div id="programDoses">
+      <%= form.fields_for :program_doses do |program_dose_form| %>
+        <%= render 'program_dose_fields', f: program_dose_form %>
+      <% end %>
+    </div>
+      <div class="links">
+        <%= link_to_add_association "Add", form, :program_doses, class:"btn btn-sm btn-primary display-inline" %>
+      </div>
+  <%= form.submit %>
+<% end %>
