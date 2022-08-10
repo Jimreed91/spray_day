@@ -1,0 +1,15 @@
+<%= form_with model: @crop do |form| %>
+  <%= form.label("Crop name") %>
+  <%= form.text_field(:name) %> <br>
+  <%= form.label("Year planted") %>
+  <%= form.text_field(:year) %> <br>
+  <%= form.label("Hectares") %>
+  <%= form.text_field(:hectares) %> <br>
+  <%= form.label("Row spacing(m)") %>
+  <%= form.text_field(:row_spacing) %> <br>
+  <%# <%= form.label("Farm") %>
+  <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
+  <%= form.hidden_field :farm_id, value: current_user.farm[:id] %>
+    <%#options_from_collection_for_select(@farms, 'id', 'name') %> <br>
+  <%= form.submit %>
+<% end %>
