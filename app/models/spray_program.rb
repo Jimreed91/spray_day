@@ -44,7 +44,7 @@ class SprayProgram < ApplicationRecord
   end
 
   def mix_per_tank(options = {})
-    mix= total_mix / number_of_tanks
+    mix = total_mix / number_of_tanks
     options[:view] == true ? mix.to_f.round(:places) : mix
   end
 end
