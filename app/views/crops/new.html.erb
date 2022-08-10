@@ -1,4 +1,4 @@
-<h1>Crops#new</h1>
+<h1>New Crop</h1>
 <p>Find me in app/views/crops/new.html.erb</p>
 
 <%= form_with model: @crop do |form| %>
@@ -10,9 +10,9 @@
   <%= form.text_field(:hectares) %> <br>
   <%= form.label("Row spacing(m)") %>
   <%= form.text_field(:row_spacing) %> <br>
-  <%= form.label("Farm") %>
+  <%# <%= form.label("Farm") %>
   <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
-  <%= form.select :farm_id,
-    options_from_collection_for_select(@farms, 'id', 'name') %> <br>
+  <%= form.hidden_field :farm_id, value: current_user.farm[:id] %>
+    <%#options_from_collection_for_select(@farms, 'id', 'name') %> <br>
   <%= form.submit %>
 <% end %>
