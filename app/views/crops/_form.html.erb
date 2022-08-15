@@ -1,15 +1,31 @@
-<%= form_with model: @crop do |form| %>
-  <%= form.label("Crop name") %>
-  <%= form.text_field(:name) %> <br>
-  <%= form.label("Year planted") %>
-  <%= form.text_field(:year) %> <br>
-  <%= form.label("Hectares") %>
-  <%= form.text_field(:hectares) %> <br>
-  <%= form.label("Row spacing(m)") %>
-  <%= form.text_field(:row_spacing) %> <br>
-  <%# <%= form.label("Farm") %>
-  <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
-  <%= form.hidden_field :farm_id, value: current_user.farm[:id] %>
-    <%#options_from_collection_for_select(@farms, 'id', 'name') %> <br>
-  <%= form.submit %>
-<% end %>
+<div class="d-flex justify-content-center mt-5">
+  <%= form_with model: @crop do |form| %>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= form.label("Crop name", class: "input-group-text") %>
+          <%= form.text_field(:name, class: "form-control") %> <br>
+        </div>
+        <div class="input-group mt-3">
+          <%= form.label("Year planted", class: "input-group-text") %>
+          <%= form.text_field(:year, class: "form-control") %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= form.label("Hectares", class: "input-group-text") %>
+          <%= form.text_field(:hectares, class: "form-control") %> <br>
+        </div>
+        <div class="input-group mt-3">
+          <%= form.label("Row spacing(m)", class: "input-group-text") %>
+          <%= form.text_field(:row_spacing, class: "form-control") %>
+        </div>
+      </div>
+    </div>
+        <%# <%= form.label("Farm") %>
+        <%# <%= form.select(:farm, @farms {|farm| [farm.name, farm.id]}) %>
+        <%= form.hidden_field :farm_id, value: current_user.farm[:id] %>
+          <%#options_from_collection_for_select(@farms, 'id', 'name') %> <br>
+        <%= form.submit class: "btn btn-success" %>
+  <% end %>
+</div>
