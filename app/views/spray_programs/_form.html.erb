@@ -1,45 +1,57 @@
-<%= form_with model: @spray_program do |form|%>
-<div class="input-group">
-  <%= form.label :Date, class: "input-group-text" %>
-  <%= form.date_select :date, {}, {class: "form-select"} %>
-</div> <br>
-  <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
-    <%= form.fields_for :program_sprayer do |spray_form| %>
-      <div class="input-group">
-        <%= spray_form.label :sprayer, class: "input-group-text" %>
-        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name, {}, {class: "form-select"} %>
-      </div>
-        <h3>Config</h3>
-        <%= spray_form.label "Output(L/min)", class: "form-label"%>
-        <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %> <br>
-        <%= spray_form.label "Speed km/h",class: "form-label" %>
-        <%= spray_form.number_field :speed, step: 0.1, class: "form-control" %> <br>
-    <% end %>
 <div class="row">
-  <div class="col-md">
-    <h2>Crops</h2>
-    <div id="programCrops" class="">
-      <%= form.fields_for :program_crops do |program_crop_form| %>
-        <%= render 'program_crop_fields', f: program_crop_form%>
-      <% end %>
-    </div>
-    <div class="links">
-      <%= link_to_add_association "+", form, :program_crops, class:"btn btn-sm btn-success mt-1" %>
-    </div>
-  </div>
-  <div class="col-md">
-    <h2>Products</h2>
-    <div id="programDoses">
-      <%= form.fields_for :program_doses do |program_dose_form| %>
-        <%= render 'program_dose_fields', f: program_dose_form %>
-      <% end %>
-    </div>
+  <div class="col-md-6 ">
+      <%= form_with model: @spray_program do |form|%>
+      <div class="input-group">
+        <%= form.label :Date, class: "input-group-text" %>
+        <%= form.date_select :date, {}, {class: "form-select"} %>
+      </div> <br>
+        <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
+          <%= form.fields_for :program_sprayer do |spray_form| %>
+            <div class="input-group">
+              <%= spray_form.label :sprayer, class: "input-group-text" %>
+              <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name, {}, {class: "form-select"} %>
+            </div>
+              <h3>Config</h3>
+              <div class="row">
+                <div class="col-md">
+                  <%= spray_form.label "Output(L/min)", class: "form-label"%>
+                  <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %> <br>
+                </div>
+                <div class="col-md">
+                  <%= spray_form.label "Speed km/h",class: "form-label" %>
+                  <%= spray_form.number_field :speed, step: 0.1, class: "form-control" %> <br>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      <div class="row col-md-6">
+        <div class="col-md">
+          <h2>Crops</h2>
+          <div id="programCrops" class="">
+            <%= form.fields_for :program_crops do |program_crop_form| %>
+              <%= render 'program_crop_fields', f: program_crop_form%>
+            <% end %>
+          </div>
+          <div class="links">
+            <%= link_to_add_association "+", form, :program_crops, class:"btn btn-sm btn-success mt-1" %>
+          </div>
+        </div>
 
-      <div class="links">
-        <%= link_to_add_association "+", form, :program_doses, class:"btn btn-sm btn-success mt-1" %>
+
+        <div class="col-md">
+          <h2>Products</h2>
+          <div id="programDoses">
+            <%= form.fields_for :program_doses do |program_dose_form| %>
+              <%= render 'program_dose_fields', f: program_dose_form %>
+            <% end %>
+          </div>
+
+            <div class="links">
+              <%= link_to_add_association "+", form, :program_doses, class:"btn btn-sm btn-success mt-1" %>
+            </div>
+        </div>
+              <%= form.submit class:"btn btn-success m-3" %>
+            <% end %>
+
       </div>
-  </div>
-        <%= form.submit class:"btn btn-success m-3" %>
-      <% end %>
-
 </div>
