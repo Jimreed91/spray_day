@@ -9,7 +9,7 @@
         <th scope="col">Product</th>
         <th scope="col">Rate</th>
         <th scope="col">Total Dose</li>
-        <th scope="col">Tank Dose</li>
+        <th scope="col">Dose per tank</li>
       <tr>
     </thead>
     <tbody>
@@ -18,7 +18,7 @@
           <td scope="col"><%= dose.product.name %></td>
           <td scope="col"><%= dose.product.rate_per_ha %> L</td>
           <td scope="col"><%= dose.total_dose%> <%= to_unit(dose.product.liquid?) %></td>
-          <td scope="col"><%= dose.tank_dose.round(2) %> <%= to_unit(dose.product.liquid?) %></td>
+          <td scope="col" class="bg-warning"><%= dose.tank_dose.round(2) %> <%= to_unit(dose.product.liquid?) %></td>
         </tr>
       <% end %>
     </tbody>
@@ -38,16 +38,31 @@
 <div class="collapse" id="configForm">
   <div class="card card-body bg-light">
   <%= form_with model: @spray_program do |form|%>
-    <%= form.fields_for :program_sprayer do |spray_form| %>
-        <h3>Config</h3>
-        <%= spray_form.label :sprayer %>
-        <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name %>
-        <%= spray_form.label "Output(L/min)" %>
-        <%= spray_form.number_field :litres_per_min %> <br>
-        <%= spray_form.label "Speed km/h" %>
-        <%= spray_form.number_field :speed %> <br>
-    <% end %>
-      <%= form.submit %>
+<%= form.fields_for :program_sprayer do |spray_form| %>
+    <div class="row">
+          <div class="col-md">
+            <div class="input-group">
+              <%= spray_form.label :sprayer, class: "input-group-text" %>
+              <%= spray_form.collection_select :sprayer_id, Sprayer.all.where(farm: current_user.farm), :id, :name, {}, {class: "form-select"} %>
+            </div>
+          </div>
+                <div class="col-md">
+                  <div class="input-group">
+                    <%= spray_form.label "Flow rate", class: "input-group-text"%>
+                    <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %> <br>
+                    <span class="input-group-text">l/min</span>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="input-group">
+                    <%= spray_form.label "Speed",class: "input-group-text" %>
+                    <%= spray_form.number_field :speed, step: 0.1, class: "form-control" %>
+                    <span class="input-group-text">km/h</span>
+                  </div>
+                </div>
+              </div>
+            <%= form.submit class:"btn btn-success m-3" %>
+          <% end %>
     <% end %>
   </div>
 </div>

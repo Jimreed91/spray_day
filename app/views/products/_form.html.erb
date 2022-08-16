@@ -15,8 +15,10 @@
       </div>
       <div class="col-md-6">
           <div class="input-group">
-            <%= form.label :Rate_per_ha, class: "input-group-text"%>
+            <%= form.label :Rate, class: "input-group-text"%>
             <%= form.number_field :rate_per_ha, in: 0.1..20, step: 0.1, class: "form-control" %>
+            <span class="input-group-text">l/kg</span>
+            <span class="input-group-text">per ha</span>
           </div>
           <%= form.hidden_field :farm_id, value: current_user.farm.id%>
           <%= form.submit class: "btn btn-success mt-2" %>
