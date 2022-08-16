@@ -11,8 +11,8 @@
     <tr>
       <td scope="col"><%= @spray_program.total_area.round(2) %></td>
       <td scope="col"><%= @spray_program.total_mix(view: true, places: 0) %> L</td>
-      <td scope="col"><%= @spray_program.number_of_tanks%> </td>
-      <td scope="col"><%= @spray_program.mix_per_tank.round(2) %> L</td>
+      <td scope="col" class="bg-warning"><%= @spray_program.number_of_tanks%> </td>
+      <td scope="col" class="bg-warning"><%= @spray_program.mix_per_tank.round(2) %> L</td>
     </tr>
   </tbody>
 </table>
