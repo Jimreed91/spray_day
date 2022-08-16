@@ -13,12 +13,14 @@
       </div>
       <div class="col-md-6">
         <div class="input-group">
-          <%= form.label("Hectares", class: "input-group-text") %>
-          <%= form.text_field(:hectares, class: "form-control") %> <br>
+          <%= form.label("Area", class: "input-group-text") %>
+          <%= form.text_field(:hectares, class: "form-control") %>
+          <span class="input-group-text">ha</span>
         </div>
         <div class="input-group mt-3">
-          <%= form.label("Row spacing(m)", class: "input-group-text") %>
+          <%= form.label("Row spacing", class: "input-group-text") %>
           <%= form.text_field(:row_spacing, class: "form-control") %>
+          <span class="input-group-text">m</span>
         </div>
       </div>
     </div>

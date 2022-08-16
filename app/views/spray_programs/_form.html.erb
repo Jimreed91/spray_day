@@ -14,12 +14,18 @@
               <h3>Config</h3>
               <div class="row">
                 <div class="col-md">
-                  <%= spray_form.label "Output(L/min)", class: "form-label"%>
-                  <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %> <br>
+                  <div class="input-group">
+                    <%= spray_form.label "Flow rate", class: "input-group-text"%>
+                    <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %> <br>
+                    <span class="input-group-text">l/min</span>
+                  </div>
                 </div>
                 <div class="col-md">
-                  <%= spray_form.label "Speed km/h",class: "form-label" %>
-                  <%= spray_form.number_field :speed, step: 0.1, class: "form-control" %> <br>
+                  <div class="input-group">
+                    <%= spray_form.label "Speed",class: "input-group-text" %>
+                    <%= spray_form.number_field :speed, step: 0.1, class: "form-control" %>
+                    <span class="input-group-text">km/h</span>
+                  </div>
                 </div>
               </div>
           <% end %>

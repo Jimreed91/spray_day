@@ -10,8 +10,9 @@
       </div>
       <div class="col-md-6">
         <div class="input-group mt-2">
-          <%= form.label :Capacity_in_litres, class: "input-group-text" %>
+          <%= form.label :Capacity, class: "input-group-text" %>
           <%= form.number_field :capacity, class: "form-control" %>
+          <span class="input-group-text">l</span>
         </div>
           <%= form.hidden_field :farm_id, value: current_user.farm.id%>
 
