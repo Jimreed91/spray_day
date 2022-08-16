@@ -1,10 +1,28 @@
-<%= form_with model: @product do |form|%>
-  <%= form.label :Product_name, class: "form-label"%>
-  <%= form.text_field :name, class: "form-control" %> <br>
-  <%= form.label :Rate_per_ha, class: "form-label"%>
-  <%= form.number_field :rate_per_ha, in: 0.1..20, step: 0.1, class: "form-control" %>
-  <%= form.label :liquid, class: "form-check-label" %>
-  <%= form.check_box :liquid, class: "form-check_input" %>
-  <%= form.hidden_field :farm_id, value: current_user.farm.id%>
-  <%= form.submit class: "btn btn-success" %>
-<% end %>
+<div class="d-flex justify-content-center mt-5">
+
+    <%= form_with model: @product do |form|%>
+  <div class= "row">
+      <div class="col-md-6">
+        <div class="input-group mt-2">
+          <%= form.label :Product_name, class: "input-group-text"%>
+          <%= form.text_field :name, class: "form-control" %>
+        </div>
+        <div class="input-group mt-2">
+          <%= form.label :liquid, class: "input-group-text" %>
+          <%= form.check_box :liquid, class: "form-check_input mt-0" %>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+          <div class="input-group">
+            <%= form.label :Rate, class: "input-group-text"%>
+            <%= form.number_field :rate_per_ha, in: 0.1..20, step: 0.1, class: "form-control" %>
+            <span class="input-group-text">l/kg</span>
+            <span class="input-group-text">per ha</span>
+          </div>
+          <%= form.hidden_field :farm_id, value: current_user.farm.id%>
+          <%= form.submit class: "btn btn-success mt-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>
