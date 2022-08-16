@@ -1,8 +1,21 @@
-<%= form_with  model: @sprayer do |form|%>
-  <%= form.label :Sprayer_name %>
-  <%= form.text_field :name  %>
-  <%= form.label :Capacity_in_litres %>
-  <%= form.number_field :capacity %>
-  <%= form.hidden_field :farm_id, value: current_user.farm.id%>
-  <%= form.submit %>
-<% end %>
+<div class="d-flex justify-content-center mt-5">
+  <%= form_with  model: @sprayer do |form|%>
+    <div class="row">
+      <div class="col-md-6">
+         <div class="input-group mt-2">
+          <%= form.label :Sprayer_name, class: "input-group-text" %>
+          <%= form.text_field :name, class: "form-control"  %>
+         </div>
+                   <%= form.submit class: "btn btn-success mt-2" %>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group mt-2">
+          <%= form.label :Capacity_in_litres, class: "input-group-text" %>
+          <%= form.number_field :capacity, class: "form-control" %>
+        </div>
+          <%= form.hidden_field :farm_id, value: current_user.farm.id%>
+
+      </div>
+    </div>
+  <% end %>
+</div>
