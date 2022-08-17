@@ -15,7 +15,7 @@ class SprayProgram < ApplicationRecord
   accepts_nested_attributes_for :program_doses, reject_if: :all_blank, allow_destroy: true
 
   # validates_associated :program_sprayer  accepts_nested_attributes_for :program_crops, reject_if: :all_blank, allow_destroy: true
-
+  validates :program_crops, :program_doses, length: { minimum: 1 }
   def litres_per_ha
     output =  program_sprayer.litres_per_min
     spacing = crops.first.row_spacing
