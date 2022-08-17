@@ -5,9 +5,9 @@ FactoryBot.define do
     # tanks_count { rand(1...4) }
     farm { FactoryBot.create(:farm) }
     trait :with_assoc do
-      program_sprayer { FactoryBot.create(:program_sprayer) }
-      program_crops { [FactoryBot.create(:program_crop)] }
-      program_doses { [FactoryBot.create(:program_dose)] }
+      program_sprayer { FactoryBot.build_stubbed(:program_sprayer) }
+      program_crops { [FactoryBot.build_stubbed(:program_crop)] }
+      program_doses { [FactoryBot.build_stubbed(:program_dose)] }
     end
   end
 end
