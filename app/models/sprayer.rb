@@ -4,5 +4,4 @@ class Sprayer < ApplicationRecord
   has_many :spray_programs, through: :program_sprayer
 
   validates :name, :capacity, presence: true
-
 end
