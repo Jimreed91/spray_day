@@ -1,10 +1,12 @@
+ <%= form_with model: @spray_program, local: true do |form|%>
+ <div>
 <div class="row">
   <div class="col-md-6 ">
-      <%= form_with model: @spray_program do |form|%>
+
       <div class="input-group">
         <%= form.label :Date, class: "input-group-text" %>
         <%= form.date_select :date, {}, {class: "form-select"} %>
-      </div> <br>
+      </div>
         <%= form.hidden_field :farm_id, value: current_user.farm[:id]%>
           <%= form.fields_for :program_sprayer do |spray_form| %>
             <div class="input-group">
@@ -16,7 +18,7 @@
                 <div class="col-md">
                   <div class="input-group">
                     <%= spray_form.label "Flow rate", class: "input-group-text"%>
-                    <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %> <br>
+                    <%= spray_form.number_field :litres_per_min, step: 0.1, class: "form-control" %>
                     <span class="input-group-text">l/min</span>
                   </div>
                 </div>
@@ -28,8 +30,10 @@
                   </div>
                 </div>
               </div>
+
           <% end %>
-        </div>
+  </div>
+
       <div class="row col-md-6">
         <div class="col-md">
           <h2>Crops</h2>
@@ -43,7 +47,6 @@
           </div>
         </div>
 
-
         <div class="col-md">
           <h2>Products</h2>
           <div id="programDoses">
@@ -52,12 +55,14 @@
             <% end %>
           </div>
 
-            <div class="links">
-              <%= link_to_add_association "+", form, :program_doses, class:"btn btn-sm btn-success mt-1" %>
-            </div>
+          <div class="links">
+            <%= link_to_add_association "+", form, :program_doses, class:"btn btn-sm btn-success mt-1" %>
+          </div>
         </div>
-              <%= form.submit class:"btn btn-success m-3" %>
-            <% end %>
+
+         <%= form.submit class:"btn btn-success m-3" %>
 
       </div>
+  </div>
 </div>
+     <% end %>

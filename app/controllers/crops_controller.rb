@@ -22,8 +22,8 @@ class CropsController < ApplicationController
       redirect_to crop_path(@crop)
       flash_notice(@crop, 'created')
     else
-      render :new, status: :unprocessable_entity
       flash_errors(@crop)
+      render :new
     end
   end
 
