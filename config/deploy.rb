@@ -1,14 +1,14 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.1"
+lock '~> 3.17.1'
 
 require 'capistrano-db-tasks'
 
-set :application, "spray-day"
-set :repo_url, "git@github.com:Jimreed91/spray_day.git"
-set :deploy_to, "/var/www/spray-day"
+set :application, 'spray-day'
+set :repo_url, 'git@github.com:Jimreed91/spray_day.git'
+set :deploy_to, '/var/www/spray-day'
 
-append :linked_files, "config/database.yml", 'config/master.key'
-append :linked_dirs, "log", "tmp/pids", "tmp/cache"
+append :linked_files, 'config/database.yml', 'config/master.key'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache'
 
 set :keep_releases, 3
 set :keep_assets, 3
@@ -30,7 +30,6 @@ end
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
