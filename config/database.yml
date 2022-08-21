@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: spray_day_production
-  username: spray_day
-  password: <%= ENV['SPRAY_DAY_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: Rails.application.credentials.dig(:production, :db_password)
