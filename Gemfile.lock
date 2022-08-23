@@ -236,6 +236,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
+    render_anywhere (0.0.12)
+      rails (>= 3.0.7)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -378,6 +380,7 @@ DEPENDENCIES
   rails (~> 6.1.6)
   rails-erd
   rails_12factor
+  render_anywhere
   rspec-rails
   rubocop
   rubocop-rails
