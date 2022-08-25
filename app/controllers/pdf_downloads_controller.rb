@@ -1,4 +1,4 @@
-class DownloadsController < ApplicationController
+class PdfDownloadsController < ApplicationController
   def show
     respond_to do |format|
       format.pdf { send_spray_plan_pdf }
@@ -11,8 +11,8 @@ class DownloadsController < ApplicationController
 
   private
 
-  def invoice
-    Invoice.find(params[:spray_plan_id])
+  def spray_plan
+    SprayProgram.find(params[:spray_program_id])
   end
 
   def download
