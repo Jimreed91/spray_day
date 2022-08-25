@@ -13,7 +13,7 @@ class PdfDownload
   end
 
   def filename
-    "Invoice #{spray_plan.number}.pdf"
+    "Invoice #{spray_plan[:id]}.pdf"
   end
 
   def render_attributes

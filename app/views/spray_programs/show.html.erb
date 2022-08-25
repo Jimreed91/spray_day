@@ -2,6 +2,12 @@
   <h2>Spray program review </h2>
   <h4>Scheduled for:<%= @spray_program.date.strftime("%d/%e/%Y") %></h4>
 
+<%= link_to "Download PDF",
+  spray_program_pdf_download_path(@spray_program, format: "pdf"),
+  target: "_blank",
+  class: "btn btn-secondary"
+%>
+
   <h3>Mix details</h3>
   <table class="table table-hover table-light border-success">
     <thead>
