@@ -9,11 +9,11 @@ class PdfDownload
 
   def to_pdf
     kit = PDFKit.new(as_html)
-    kit.to_file("tmp/spray_plan.pdf")
+    kit.to_file("tmp/#{filename}")
   end
 
   def filename
-    "Invoice #{spray_plan[:id]}.pdf"
+    "spray_plan#{spray_plan[:id]}.pdf"
   end
 
   def render_attributes
