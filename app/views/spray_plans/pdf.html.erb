@@ -1,3 +1,22 @@
  <p>Ralph Industries, LLC</p>
     <p>32 Ralph Ln</p>
     <p class="bg-dark">Ralphsville, IN, RALPH</p>
+
+
+  <h3>Mix details</h3>
+  <table class="">
+      <tr class="">
+        <th >Product</th>
+        <th  >Rate</th>
+        <th  >Total Dose</li>
+        <th  >Dose per tank</li>
+      <tr>
+      <% spray_plan.program_doses.each do |dose| %>
+        <tr>
+          <td  ><%= dose.product.name %></td>
+          <td  ><%= dose.product.rate_per_ha %> L</td>
+          <td  ><%= dose.total_dose%> <%= dose.product.liquid? %></td>
+          <td   class="bg-warning"><%= dose.tank_dose.round(2) %> <%= dose.product.liquid? %></td>
+        </tr>
+      <% end %>
+  </table>
