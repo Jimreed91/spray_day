@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   patch 'sprayers/:id', to: 'sprayers#update'
   delete 'sprayers/:id', to: 'sprayers#destroy'
 
-  resources :spray_programs
+  resources :spray_programs do
+    resource :pdf_download, only: [:show]
+  end
 end

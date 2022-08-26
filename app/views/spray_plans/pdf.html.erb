@@ -1,0 +1,56 @@
+<h2>Spray plan for:<%=spray_plan.date%></h2>
+
+
+  <div class="col-l">
+
+    <table class="">
+    <caption>Tanks</caption>
+        <tr class="">
+          <th>Total Tanks</th>
+          <th>Volume per tank </th>
+        <tr>
+        <tr>
+          <td><%= spray_plan.number_of_tanks %></td>
+          <td><%= spray_plan.mix_per_tank.round(2) %> l</td>
+        </tr>
+    </table>
+  </div>
+
+  <div class= "col-l" >
+
+    <table class="">
+    <caption>Mix details</caption>
+        <tr class="">
+          <th>Product</th>
+          <th>Total needed</th>
+          <th>Dose per tank</li>
+        <tr>
+        <% spray_plan.program_doses.each do |dose| %>
+          <tr>
+            <td><%= dose.product.name %></td>
+            <td><%= dose.total_dose %> <%= dose.product.liquid? ? "l" : "kg" %></td>
+            <td style="background-color:yellow;"><%= dose.tank_dose.round(2) %> <%= dose.product.liquid? ? "l" : "kg" %></td>
+          </tr>
+        <% end %>
+    </table>
+  </div>
+
+
+
+
+  <div class="col-l">
+
+    <% spray_plan.crops.each do |crop| %>
+      <table class="">
+      <caption>Crops to Spray</caption>
+          <tr class="">
+            <th>Name</th>
+            <th>Area</th>
+          </tr>
+          <tr>
+            <td><%= crop.name %></td>
+            <td><%= crop.hectares.round(2)%> ha</td>
+          </tr>
+    <% end %>
+  </div>
+</div>
