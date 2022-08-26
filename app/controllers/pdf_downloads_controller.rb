@@ -3,9 +3,7 @@ class PdfDownloadsController < ApplicationController
     respond_to do |format|
       format.pdf { send_spray_plan_pdf }
 
-      if Rails.env.development?
-        format.html { render_sample_html }
-      end
+      format.html { render_sample_html } if Rails.env.development?
     end
   end
 
@@ -30,8 +28,8 @@ class PdfDownloadsController < ApplicationController
   def download_attributes
     {
       filename: download.filename,
-      type: "application/pdf",
-      disposition: "inline"
+      type: 'application/pdf',
+      disposition: 'inline'
     }
   end
 end
