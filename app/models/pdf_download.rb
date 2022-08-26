@@ -1,4 +1,4 @@
-require "render_anywhere"
+require 'render_anywhere'
 
 class PdfDownload
   include RenderAnywhere
@@ -18,8 +18,8 @@ class PdfDownload
 
   def render_attributes
     {
-      template: "spray_plans/pdf",
-      layout: "pdf_download",
+      template: 'spray_plans/pdf',
+      layout: 'pdf_download',
       locals: { spray_plan: spray_plan }
     }
   end
@@ -29,8 +29,8 @@ class PdfDownload
   attr_reader :spray_plan
 
   def as_html
-    ActionController::Base.new.render_to_string( template: "spray_plans/pdf",
-      layout: "spray_plan_pdf",
-      locals: { spray_plan: spray_plan } )
+    ActionController::Base.new.render_to_string(template: 'spray_plans/pdf',
+                                                layout: 'spray_plan_pdf',
+                                                locals: { spray_plan: spray_plan })
   end
 end
