@@ -372,7 +372,7 @@ DEPENDENCIES
   launchy
   lefthook
   listen (~> 3.3)
-  pdfkit
+  pdfkit (~> 0.8.2)
   pg (~> 1.1)
   pry-byebug
   pry-rails
@@ -398,7 +398,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
-  wkhtmltopdf-binary (~> 0.12.6.5)
+  wkhtmltopdf-binary (~> 0.12.3)
 
 RUBY VERSION
    ruby 3.0.3p157
