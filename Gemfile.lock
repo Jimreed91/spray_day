@@ -398,7 +398,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
-  wkhtmltopdf-binary (~> 0.12.3)
+  wkhtmltopdf-binary (~> 0.12.6.5)
 
 RUBY VERSION
    ruby 3.0.3p157
