@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/faker-ruby/faker.git
-  revision: 9093f59f212fe9d72287cdee7eb03f121347c516
+  revision: aaf6cbe9841877113da1ead8b5538fc072e4efb6
   branch: master
   specs:
     faker (2.22.0)
@@ -346,7 +346,6 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    wkhtmltopdf-binary (0.12.6.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.0)
@@ -398,10 +397,9 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
-  wkhtmltopdf-binary
 
 RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.3.17
+   2.3.21
