@@ -10,8 +10,8 @@ set :deploy_to, '/var/www/spray-day'
 append :linked_files, 'config/database.yml', 'config/master.key'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache'
 
-set :keep_releases, 3
-set :keep_assets, 3
+set :keep_releases, 1
+set :keep_assets, 1
 
 set :db_local_clean, true
 set :db_remote_clean, true
