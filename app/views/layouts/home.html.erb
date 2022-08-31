@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag %>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,22 +14,15 @@
   </head>
 
   <body>
-    <%= render partial: 'shared/navbar' %>
-    <div class="d-flex justify-content-start ms-4 mt-4">
-      <% if notice %>
-        <div class="alert alert-success "><%= notice %></div>
-      <% end %>
-      <% if alert %>
-        <div class="alert alert-danger"><%= alert %></div>
-      <% end %>
-    </div>
+    <%=  render partial: 'shared/navbar' if user_signed_in? %>
+
   <div class="">
-  <div class="container ps-md-5 bg-light rounded min-vh-100">
+  <div class="bg-light rounded min-vh-100">
     <%= yield %>
 
+
   </div>
-  </div>
-    <%= render partial: 'shared/navbarm' %>
+    <%= render partial: 'shared/navbarm' if user_signed_in? %>
     <%= render partial: 'shared/footer'  %>
   </body>
 </html>

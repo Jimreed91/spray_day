@@ -2,4 +2,7 @@
 
 # Top level doc
 class PagesController < ApplicationController
+
+  layout "home"
+
 end
