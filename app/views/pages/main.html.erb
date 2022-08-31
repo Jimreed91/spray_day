@@ -1,11 +1,97 @@
-<h1>Homepage</h1>
 
-<p>Hi, nothing here just yet this is really just an experimental toy at this stage but if you'd like to test it out...</p>
 
-<ol>
-  <li>Create an account and log in </li>
-  <li>Add at least one crop, product and sprayer to your farm (preferably a few crops and products)</li>
-  <li>Now you should be able to add a new spray program</li>
-</ol>
+  <section class="hero-banner">
+    <div class="container-fluid d-flex flex-column justify-content-evenly" style="background-position: center; background-image:url(<%= asset_path('spray.png') %>); height:100vh;">
+      <div style="max-height: 150px; width: auto" class="align-self-center mb-5 pb-5">
+        <%= image_tag("sprayday.png", class:"img-fluid")%>
+      </div>
+      <div>
+        <%# <h1 class="text-light text-center pb-5" style="font-size: 90px">Spray-day</h1> %>
 
-<p>plenty of improvements incoming this is really just a proof of concept, thanks for taking a look</p>
+        <h3 class="text-light text-center mt-5"> Spray operation management for top-fruit producers</h3>
+      </div>
+    <% unless user_signed_in? %>
+      <div class="list-inline align-self-center">
+        <%= link_to "Log in", new_user_session_path, class: 'btn btn-lg btn-secondary'  %>
+        <%= link_to "Sign up", new_user_registration_path, class:'btn btn-lg btn-success'  %>
+      </div>
+    <% end %>
+    </div>
+
+  </section>
+
+  <section class="py-5">
+      <div class="container my-5">
+          <div class="row justify-content-center">
+              <div class="col-lg-6">
+                  <h2>About</h2>
+                   <p class="lead">A mobile-first web application for planning spray applications on the go....</p>
+                  <p class="mb-0">Uses information about your farm to calculate how much of what to add to a spray tank to get the desired application rate.
+                  Simple as that really... </p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="py-5 bg-secondary text-light">
+      <div >
+        <h2 class="text-center">Example gallery</h2>
+        <%# <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGallery" aria-expanded="false" aria-controls="collapseGallery">
+          View
+        </button> %>
+      </div>
+        <div class="container my-5 collapse.show" id="collapseGallery">
+
+          <div class="row justify-content-center">
+              <div class="col-md-4 mt-3 col-lg-3">
+                  <%= image_tag("sprayday_mobile/products.png", class:"img-fluid img-thumbnail") %>
+              </div>
+                <div class="col-md-4 mt-3 col-lg-3">
+                    <%= image_tag("sprayday_mobile/crops.png", class:"img-fluid img-thumbnail") %>
+                </div>
+                <div class="col-md-4 mt-3 col-lg-3">
+                    <%= image_tag("sprayday_mobile/sprayer.png", class:"img-fluid img-thumbnail") %>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-4 mt-3 col-lg-3">
+                    <%= image_tag("sprayday_mobile/sprayform.png", class:"img-fluid img-thumbnail") %>
+                </div>
+                <div class="col-md-4 mt-3 col-lg-3">
+                    <%= image_tag("sprayday_mobile/sprayplan.png", class:"img-fluid img-thumbnail") %>
+                </div>
+                <div class="col-md-4 mt-3 col-lg-3">
+                    <%= image_tag("sprayday_mobile/finetune.png", class:"img-fluid img-thumbnail") %>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-4 mt-3 col-lg-6">
+                    <%= image_tag("sprayday_mobile/pdeef.png", class:"img-fluid img-thumbnail") %>
+                </div>
+              </div>
+                <%# <div class="col-md-4 mt-3 col-lg-3">
+                    <img src="https://source.unsplash.com/collection/190727/1500x900" class="img-fluid" alt="image">
+                </div> %>
+            </div>
+        </div>
+  </section>
+
+  <section class="py-5 bg-dark text-light">
+      <div class="container my-5">
+          <div class="row justify-content-center">
+              <div class="col-lg-6">
+                  <h2>Development</h2>
+                   <p class="lead">This application is still at the mvp stage </p>
+                  <p class="mb-0">If you are interested in the application or think it might be of use to you / you have ideas for a feature feel free to get in touch.</p>
+                  <mark class="mb-0 mt-2">pdf download of spray plans is unavailable temporarily while I work on improving deployment</mark>
+                  <h3 class="mt-4">Planned work:</h3>
+                  <ul>
+                    <li>Product type and recommended mix order eg : water-soluble bags -> wettable powders -> water dispersible granules -> liquid flowables</li>
+                    <li>Redeployment in docker container</li>
+                    <li>CSV export</li>
+                    <li>Auto calculation of spray flow with custom nozzle configuration</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
