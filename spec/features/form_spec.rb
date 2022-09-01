@@ -9,6 +9,6 @@ RSpec.describe 'Login', type: :feature do
     fill_in :user_password, with: '123123'
     fill_in :user_password_confirmation, with: '123123'
     click_on :commit
-    expect(page).to have_content 'Homepage'
+    expect(page).to have_content 'About'
   end
 end
