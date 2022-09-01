@@ -15,4 +15,14 @@ module ApplicationHelper
   def flash_notice(model, message)
     flash[:notice] = "#{model.model_name.singular} \'#{model.name}\' #{message}"
   end
+
+  def default_meta_tags
+    {
+      title: 'Spray-day',
+      description: 'A program for quicky making a spray application plan on the go',
+      keywords: 'spray orchard application calculation calculator',
+      separator: '&mdash;'.html_safe,
+      image_src: image_url('sprayday.png', class: 'img-fluid')
+    }
+  end
 end

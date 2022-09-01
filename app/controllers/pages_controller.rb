@@ -2,7 +2,5 @@
 
 # Top level doc
 class PagesController < ApplicationController
-
-  layout "home"
-
+  layout 'home'
 end
