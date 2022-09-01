@@ -22,8 +22,7 @@ module ApplicationHelper
       description: 'A program for quicky making a spray application plan on the go',
       keywords: 'spray orchard application calculation calculator',
       image_src: image_url('ogimage.png', class: 'img-fluid'),
-      og: { title: :title, image: { _: :image_src, width: 150, height: 150 }, url: 'https://www.spray-day.click'
-      }
+      og: { title: :title, image: { _: :image_src, width: 150, height: 150 }, url: 'https://www.spray-day.click' }
     }
   end
 end
