@@ -63,11 +63,5 @@ To do:
 
 
 ## Contact
-Created by [Sprayers-101](https://sprayers101.com/) - feel free to contact me!
+Created by [James Reed](https://www.linkedin.com/in/jamesreed91/) - feel free to contact me!
 
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
