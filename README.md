@@ -1,4 +1,6 @@
-# Spray Day
+<p align="center">
+  <img src="./app/assets/images/sprayday.png" width="45%" height="50%">
+</p>
 Check out the initial version here, I've just migrated it to aws https://spray-day.click/
 
 ## Table of Contents
@@ -36,11 +38,9 @@ Check out the initial version here, I've just migrated it to aws https://spray-d
 
 
 ## Screenshots
-<p align="center">
-<img src="./app/assets/images/sprayday.png" width="45%" height="50%">
 
 <img src="./app/assets/images/sprayday_mobile/products.png" width="45%"></img> <img src="./app/assets/images/sprayday_mobile/sprayform.png" width="45%"></img> <img src="./app/assets/images/sprayday_mobile/finetune.png" width="45%"></img> <img src="./app/assets/images/sprayday_mobile/sprayplan.png" width="45%"></img>
-</p>
+
 
 
 
