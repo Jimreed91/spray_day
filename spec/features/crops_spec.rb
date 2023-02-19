@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'crops', type: :feature do
   it 'user can create and view a new crop' do
     login_as(create(:user))
-    visit crops_new_path
+    visit new_crop_path
     fill_in('crop_name', with: 'test apple')
     fill_in('crop_year', with: 2010)
     fill_in('crop_hectares', with: 2.2)

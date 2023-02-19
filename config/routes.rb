@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   resources :products
   resources :crops
-
-
   get 'farms/new', to: 'farms#new'
   get 'farms/:id', to: 'farms#show', as: :farm
   post 'farms', to: 'farms#create'
