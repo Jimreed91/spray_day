@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::InvalidForeignKey do
     redirect_back fallback_location: root_path, alert: "This items is still in use and can't be deleted"
-    def main; end
   end
+
+  def main; end
 end
