@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px;
+  font-size: 20px;
+}
+.row {
+   display: -webkit-box;
+   -webkit-box-pack: center;
+}
+.col-l {
+/* margin-right:20px; */
+margin-top:50px;
+margin-left:50px;
+}
+.col-r {
+margin-left:100px;
+}
+</style>
+
+  </head>
+
+  <body>
+
+  <div class="">
+  <div class="container ps-md-5 bg-light rounded min-vh-100">
+    <%= yield %>
+
+  </div>
+  </div>
+
+  </body>
+</html>

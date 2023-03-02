@@ -11,7 +11,7 @@ gem 'devise'
 gem 'rails', '~> 6.1.6'
 # Use postgresql as the database for Active Record
 gem 'meta-tags', '~> 2.1'
-# gem 'pdfkit', '~> 0.8.2'
+gem 'pdfkit', '~> 0.8.2'
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

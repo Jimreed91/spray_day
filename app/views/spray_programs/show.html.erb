@@ -3,9 +3,9 @@
   <h4>Scheduled for:<%= @spray_program.date.strftime("%d/%e/%Y") %></h4>
 
 <%= link_to "Download PDF",
-  spray_program_pdf_download_path(@spray_program, format: "pdf"),
+  spray_program_pdf_download_path(@spray_program, format: "html"),
   target: "_blank",
-  class: "btn btn-secondary disabled"
+  class: "btn btn-secondary"
 %>
 
   <h3>Mix details</h3>
