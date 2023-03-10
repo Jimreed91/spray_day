@@ -49,8 +49,8 @@ class SprayProgram < ApplicationRecord
     options[:view] == true ? mix.to_f.round(:places) : mix
   end
 
-  def time_to_finish()
-    total_mix / (program_sprayer.litres_per_min)
+  def time_to_finish
+    total_mix / program_sprayer.litres_per_min
   end
 end
 # return minimum number of equal tanks required to equal total mix
