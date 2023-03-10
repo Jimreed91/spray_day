@@ -48,6 +48,10 @@ class SprayProgram < ApplicationRecord
     mix = total_mix / number_of_tanks
     options[:view] == true ? mix.to_f.round(:places) : mix
   end
+
+  def time_to_finish()
+    total_mix / (program_sprayer.litres_per_min)
+  end
 end
 # return minimum number of equal tanks required to equal total mix
 # if sprayer capacity greater than the divided total mix return number divided by

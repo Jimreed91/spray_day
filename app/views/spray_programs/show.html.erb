@@ -22,7 +22,7 @@
       <% @spray_program.program_doses.each do |dose| %>
         <tr>
           <td scope="col"><%= dose.product.name %></td>
-          <td scope="col"><%= dose.product.rate_per_ha %> L</td>
+          <td scope="col"><%= dose.product.rate_per_ha %> <%= to_unit(dose.product.liquid?) %></td>
           <td scope="col"><%= dose.total_dose%> <%= to_unit(dose.product.liquid?) %></td>
           <td scope="col" class="bg-warning"><%= dose.tank_dose.round(2) %> <%= to_unit(dose.product.liquid?) %></td>
         </tr>

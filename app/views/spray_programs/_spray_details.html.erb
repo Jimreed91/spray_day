@@ -1,18 +1,32 @@
-<table class="table table-hover border-success table-light">
+<div>
+  <table class="table table-hover border-success table-light">
+    <thead>
+      <tr>
+        <th scope="col"> Total Area </th>
+        <th scope="col">Total mix Vol.</th>
+        <th scope="col">No. of tanks</li>
+        <th scope="col">Tank Vol. </li>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="col"><%= @spray_program.total_area.round(2) %></td>
+        <td scope="col"><%= @spray_program.total_mix(view: true, places: 0) %> L</td>
+        <td scope="col" class="bg-warning"><%= @spray_program.number_of_tanks%> </td>
+        <td scope="col" class="bg-warning"><%= @spray_program.mix_per_tank.round(2) %> L</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-hover border-success table-light">
   <thead>
     <tr>
-      <th scope="col"> Total Area </th>
-      <th scope="col">Total mix Vol.</th>
-      <th scope="col">No. of tanks</li>
-      <th scope="col">Tank Vol. </li>
+      <th scope="col"> Time to spray</th>
     <tr>
   </thead>
   <tbody>
     <tr>
-      <td scope="col"><%= @spray_program.total_area.round(2) %></td>
-      <td scope="col"><%= @spray_program.total_mix(view: true, places: 0) %> L</td>
-      <td scope="col" class="bg-warning"><%= @spray_program.number_of_tanks%> </td>
-      <td scope="col" class="bg-warning"><%= @spray_program.mix_per_tank.round(2) %> L</td>
+      <td scope="col"><%= @spray_program.time_to_finish.round %> mins</td>
     </tr>
   </tbody>
 </table>
+</div>
